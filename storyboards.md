@@ -16,9 +16,10 @@ Aaron Hurtado's Story Board 1:
 Aaron Hurtado's Story Board 2:
 ![StoryBoard 2](http://i.imgur.com/p5ajkdS.jpg)
 
-Jennifer Phung's Storyboards:
-StoryBoard 1: PetFinder
+Jennifer Phung's Storyboards: <br/>
+StoryBoard 1: PetFinder <br/>
 ![StoryBoard 1](/images/petfinderstoryboard.jpg)
-StoryBoard 2: AnimalAssistance
+<br/>
+StoryBoard 2: AnimalAssistance <br/>
 ![StoryBoard 2](/images/animalassistancestoryboard.jpg)
 
