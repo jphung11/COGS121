@@ -1,5 +1,5 @@
 <h1>FoodyDates</h1>
-<br>
 People can satisfy their hunger with cravings they may not be aware of by being shown pictures of the foods available to them in their area.
 <br>
-![Storyboard](/images/foodystoryboard.JPG)
+
+![StoryBoard 2](/images/animalassistancestoryboard.jpg)
