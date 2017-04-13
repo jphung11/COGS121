@@ -2,4 +2,4 @@
 People can satisfy their hunger with cravings they may not be aware of by being shown pictures of the foods available to them in their area.
 <br>
 
-![StoryBoard 2](/images/animalassistancestoryboard.jpg)
+![StoryBoard](/images/foodystoryboard.JPG)
