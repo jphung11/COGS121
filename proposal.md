@@ -27,10 +27,10 @@ Design/ Prototype | All
 Login/User authorization | Tae Hee
 Map/Places API | Trung
 [ Main page ] Search bar | Trung + Tae Hee
-[ Main page ] Like / Dislike buttons |
+[ Main page ] Like / Dislike buttons | Jennifer
 [ Main page ] Show food pictures (use API) | Trung 
 [ Main page ] Food reviews | 
-[ User profile page ] Show user's interested food list |  
+[ User profile page ] Show user's interested food list |
 [ User profile page ] Show user's recent food reviews | 
 Database/ storage | Trung + Tae Hee
 [ Setting page ] (notifications/ sounds settings, change user info/ password, etc) |  
@@ -40,7 +40,7 @@ Other tasks  (order by priority):
 
 Tasks | Team members
 ----- | ------------
-UX, implement neccesary buttons    |  
+UX, implement neccesary buttons    |  Jennifer
 Code refactoring | All
 TBD
 TBD
