@@ -7,6 +7,7 @@ People can satisfy their hunger with cravings they may not be aware of by being 
 <h2>Features</h2>
 Even though some people mentioned this app more like Yelp, we're trying to make this app much more useful than Yelp in some certain use-cases.
 Here is the list of Core features of the app:
+
 * Main page:
 	* Food picture 
 	* Like / Dislike button 
@@ -24,19 +25,19 @@ Tasks | Team members
 Design/ Prototype | All
 Login/User authorization | 
 Map/Places API | Trung
-Main page |
-* Search bar | Trung + (need 1 more here)
-* Like / Dislike buttons |
-* Show food pictures (use API) | Trung 
-* Food reviews | 
-User profile page |
-* Show user's interested food list |  
-* Show user's recent food reviews | 
+[ Main page ] Search bar | Trung + (need 1 more here)
+[ Main page ] Like / Dislike buttons |
+[ Main page ] Show food pictures (use API) | Trung 
+[ Main page ] Food reviews | 
+[ User profile page ] Show user's interested food list |  
+[ User profile page ] Show user's recent food reviews | 
 Database/ storage | Trung + (need 1 more here)
-Settings page (notifications/ sounds settings, change user info/ password, etc) |  
+[ Setting page ] (notifications/ sounds settings, change user info/ password, etc) |  
 Sharing function (Check in Facebook/ Twitter etc..) | 
 
-Other tasks  (1 = most priority)
+Other tasks  (1 = most priority):
+
+
 Tasks | Team members
 ----- | ------------
 1. UX, implement neccesary buttons    |  
