@@ -23,15 +23,15 @@ Main tasks:
 Tasks | Team members
 ----- | ------------
 Design/ Prototype | All
-Login/User authorization | 
+Login/User authorization | Tae Hee
 Map/Places API | Trung
-[ Main page ] Search bar | Trung + (need 1 more here)
+[ Main page ] Search bar | Trung + Tae Hee
 [ Main page ] Like / Dislike buttons |
 [ Main page ] Show food pictures (use API) | Trung 
 [ Main page ] Food reviews | 
 [ User profile page ] Show user's interested food list |  
 [ User profile page ] Show user's recent food reviews | 
-Database/ storage | Trung + (need 1 more here)
+Database/ storage | Trung + Tae Hee
 [ Setting page ] (notifications/ sounds settings, change user info/ password, etc) |  
 Sharing function (Check in Facebook/ Twitter etc..) | 
 
