@@ -29,11 +29,11 @@ Map/Places API | Trung
 [ Main page ] Search bar | Trung + Tae Hee
 [ Main page ] Like / Dislike buttons | Jennifer
 [ Main page ] Show food pictures (use API) | Trung 
-[ Main page ] Food reviews | 
+[ Main page ] Food reviews | Aaron
 [ User profile page ] Show user's interested food list | Jennifer
 [ User profile page ] Show user's recent food reviews | Jennifer
 Database/ storage | Trung + Tae Hee
-[ Setting page ] (notifications/ sounds settings, change user info/ password, etc) |  
+[ Setting page ] (notifications/ sounds settings, change user info/ password, etc) | Aaron
 Sharing function (Check in Facebook/ Twitter etc..) | Tae Hee
 
 Other tasks  (order by priority):
