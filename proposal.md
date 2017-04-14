@@ -2,7 +2,7 @@
 People can satisfy their hunger with cravings they may not be aware of by being shown pictures of the foods available to them in their area.
 <br>
 <h2> Storyboard </h2>
-![StoryBoard](/images/foodystoryboard.jpg)
+![Story Board](/images/foodystoryboard.jpg)
 
 <h2>Features</h2>
 Even though some people mentioned this app more like Yelp, we're trying to make this app much more useful than Yelp in some certain use-cases.
