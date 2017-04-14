@@ -5,6 +5,10 @@ People can satisfy their hunger with cravings they may not be aware of by being 
 <br>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25031405/8ce5f7ba-2081-11e7-8e91-1c5fe5b4586f.jpg" width="90%"></img> 
 
+<h2>Description of what pieces of feedback that you took from classmates
+and your TA to settle on this idea</h2>
+
+
 <h2>Features</h2>
 Even though some people mentioned this app more like Yelp, we're trying to make this app much more useful than Yelp in some certain use-cases.
 Here is the list of Core features of the app:
