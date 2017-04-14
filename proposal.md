@@ -3,7 +3,7 @@ People can satisfy their hunger with cravings they may not be aware of by being 
 <br>
 <h2> Storyboard </h2>
 <br>
-![StoryBoard](/images/foodystoryboard.jpg)
+<img src="https://cloud.githubusercontent.com/assets/16699899/25031405/8ce5f7ba-2081-11e7-8e91-1c5fe5b4586f.jpg" width="90%"></img> 
 
 <h2>Features</h2>
 Even though some people mentioned this app more like Yelp, we're trying to make this app much more useful than Yelp in some certain use-cases.
@@ -30,8 +30,8 @@ Map/Places API | Trung
 [ Main page ] Like / Dislike buttons | Jennifer
 [ Main page ] Show food pictures (use API) | Trung 
 [ Main page ] Food reviews | 
-[ User profile page ] Show user's interested food list |
-[ User profile page ] Show user's recent food reviews | 
+[ User profile page ] Show user's interested food list | Jennifer
+[ User profile page ] Show user's recent food reviews | Jennifer
 Database/ storage | Trung + Tae Hee
 [ Setting page ] (notifications/ sounds settings, change user info/ password, etc) |  
 Sharing function (Check in Facebook/ Twitter etc..) | Tae Hee
