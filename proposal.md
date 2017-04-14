@@ -7,9 +7,13 @@ People can satisfy their hunger with cravings they may not be aware of by being 
 
 <h2>Description of what pieces of feedback that you took from classmates
 and your TA to settle on this idea</h2>
+
 * We got feedback that our parking locator app idea was really common and would be difficult to implement so we decided agasint doing that idea.
+
 * We got feedback that our idea that was similar to Tinder groups was not map-based enough so we also decided agasint that idea.
+
 * For our PetFinder idea we got feedback saying that most pet owners already have collars for their pets with gps locaters. Also that what would be the mtoivation for people to report lost pets. Addtionally, people can report lost animals to animal shelters. Thus we decided to not go with this idea.
+
 * Our foody idea received the most postive feedback out of all of our ideas so we decided to settle on that idea. People liked the idea of having an app thats similar to TInder but for food. The main piece of criticism we got howver was that its somewhat similar to Yelp. To counter this, we plan on making the app much more useful than Yelp and differentiating it as much as we can.
 
 
