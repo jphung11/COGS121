@@ -33,7 +33,7 @@ Map/Places API | Trung
 [ User profile page ] Show user's recent food reviews | 
 Database/ storage | Trung + Tae Hee
 [ Setting page ] (notifications/ sounds settings, change user info/ password, etc) |  
-Sharing function (Check in Facebook/ Twitter etc..) | 
+Sharing function (Check in Facebook/ Twitter etc..) | Tae Hee
 
 Other tasks  (order by priority):
 
