@@ -9,10 +9,10 @@ Even though some people mentioned this app more like Yelp, we're trying to make 
 Here is the list of Core features of the app:
 
 * Main page:
-	* Food picture 
-	* Like / Dislike button 
-	* Search bar
-	* Food reviews
+	* Food picture : User don't have to decide which type of food they want to eat. These Tinder-like pictures will randomly choose a dish or type of food in nearby restaurant and shows up. (Example: Orange chicken of Restaurant A, Fish Taco of restaurant B ) 
+	* Like / Dislike button : User can simple choose whether they like that dish or not. If they like it, it will be automatically stored in under user's profile, so he/she can simply looked back and go whenever then want)
+	* Search bar : We may also offer a similar Yelp search bar so user can also find a specific food if they have in mind
+	* Food reviews: Each food picture will also come with a ratings (from other exist apps and reviews, so user can read more info about that dish) 
 * Maps page: this page shows the location of all nearby interested food so we can quickly decide which one is the closest.
 * User profile page: This page needs to show user recently chosen food and other personal info / food reviews.
 * Settings page: This page needs to show general app settings (notifications/ sounds, change user info/ password,  etc...)
@@ -35,13 +35,12 @@ Database/ storage | Trung + (need 1 more here)
 [ Setting page ] (notifications/ sounds settings, change user info/ password, etc) |  
 Sharing function (Check in Facebook/ Twitter etc..) | 
 
-Other tasks  (1 = most priority):
-
+Other tasks  (order by priority):
 
 Tasks | Team members
 ----- | ------------
-1. UX, implement neccesary buttons    |  
-2. Code refactoring | All
-3. TBD
-4. TBD
+UX, implement neccesary buttons    |  
+Code refactoring | All
+TBD
+TBD
 
