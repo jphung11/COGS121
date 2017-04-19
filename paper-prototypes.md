@@ -19,3 +19,8 @@ Trung Do:
 <br>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25203506/53fe00aa-250e-11e7-8eaa-28bb26b44039.png" width="90%"></img>
 <br>This paper prototype demonstrates a map view that show you all your favorite food locations. When you tap to one of the marker on the map, it will expand to another view to show you more details about that specific food(restaurants, user's review, description, discount,etc..) .
+
+Tae Hee Kim:
+<br>
+<img =src="http://i.imgur.com/PiKK5G0.jpg" width=80%></img>
+<br>This paper prototype demonstrates a way on liking or skipping between the list of recommendations that is offered to the user. The recommendation screen lists the following: Main picture of the food place, rating, name, genre, and distance from your current location. You can continue to flip through recommendations using the guide me and skip button. The other paper prototype demonstrates the map view of the app in which you can drag the map location around to see which recommended places are near you.
