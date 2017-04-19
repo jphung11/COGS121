@@ -22,5 +22,5 @@ Trung Do:
 
 Tae Hee Kim:
 <br>
-<img =src="http://i.imgur.com/PiKK5G0.jpg" width=80%></img>
+<img src="http://i.imgur.com/PiKK5G0.jpg" width=80%></img>
 <br>This paper prototype demonstrates a way on liking or skipping between the list of recommendations that is offered to the user. The recommendation screen lists the following: Main picture of the food place, rating, name, genre, and distance from your current location. You can continue to flip through recommendations using the guide me and skip button. The other paper prototype demonstrates the map view of the app in which you can drag the map location around to see which recommended places are near you.
