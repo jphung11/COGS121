@@ -1,3 +1,4 @@
+
 <h1>Paper Prototypes</h1>
 
 Aaron Hurtado:
@@ -12,3 +13,9 @@ Jennifer Phung:
 <img src="https://cloud.githubusercontent.com/assets/16699899/25203306/9449f5b6-250d-11e7-9c4c-20e9bb5615fa.png" width="45%"></img> <img src="https://cloud.githubusercontent.com/assets/16699899/25203311/9ac1b618-250d-11e7-952f-2c45bc4a11db.png" width="45%"></img> 
 <br>
 This paper prototype demostrates after the user has made some swipes to the right or liked some food pictures. The paper prototype on the left shows the resulting screen of a list of restaurants the user can go to based on the food picture they liked. The paper prototype on the right shows the screen after the user selects a restaurant. These two paper prototypes show the main map/geo-related UI and interaction of our application. The user can see where the restaurant is located on the map and can click on the map if they wanted to.
+<br>
+
+Trung Do:
+<br>
+<img src="https://cloud.githubusercontent.com/assets/16699899/25203506/53fe00aa-250e-11e7-8eaa-28bb26b44039.png" width="90%"></img>
+<br>This paper prototype demonstrates a map view that show you all your favorite food locations. When you tap to one of the marker on the map, it will expand to another view to show you more details about that specific food(restaurants, user's review, description, discount,etc..) .
