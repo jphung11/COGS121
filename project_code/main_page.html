@@ -2,8 +2,12 @@
 
 <html>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
- 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="maps_interaction.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&libraries=places"></script>
+    <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&callback=initMap">
+    </script> -->
   <head>
     <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">My favorites</a></li>
@@ -17,24 +21,20 @@
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
     <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
+    <script type="text/javascript">
+
+      initMap();
+  
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUJ_-FPV80oa1RAMPRL6hhWogi1IoFfl0&callback=initMap">
-    </script>
+    <div class="list-group">
+  <button type="button" onclick="pickPlace(this)" class="list-group-item">Orange Chicken</button>
+  <button type="button" onclick="pickPlace(this)" class="list-group-item">Pizza</button>
+  <button type="button" onclick="pickPlace(this)" class="list-group-item">Milk Tea</button>
+  <button type="button" onclick="pickPlace(this)" class="list-group-item">Hamburger</button>
+  <button type="button" onclick="pickPlace(this)" class="list-group-item">Egg and Cheese</button>
+</div>
+    
   </body>
 </html>
 
