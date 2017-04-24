@@ -7,6 +7,13 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styling.css">
+    <script>
+        function change() {
+            document.getElementById("foodPic").src="../images/orangechicken.jpg";
+            document.getElementById("foodPic").alt="Orange Chicken";
+            document.getElementById("foodName").innerHTML="Orange Chicken";
+        }
+    </script>
 </head>
 <body>
     <ul class="nav nav-pills" style="margin-bottom: 1%;">
@@ -34,12 +41,12 @@
 -->
     <div class="card" style="width: 90%; text-align: center; ">
         <div class="card-block">
-            <img class="cardPic img-responsive" src="../images/hamburger_medium.jpg" alt="Hamburger">
-            <h4 class="card-title">Hamburger</h4>
+            <img id="foodPic" class="cardPic img-responsive" src="../images/hamburger_medium.jpg" alt="Hamburger">
+            <h4 class="card-title" id="foodName">Hamburger</h4>
   	        <button type="button" class="btn btn-danger">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-success" onclick="change()">
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             </button>
 
