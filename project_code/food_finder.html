@@ -1,26 +1,54 @@
+
 <!DOCTYPE html>
 
 <html>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <head>
-    <ul class="nav nav-pills">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styling.css">
+</head>
+<body>
+    <ul class="nav nav-pills" style="margin-bottom: 1%;">
       <li role="presentation" ><a href="./main_page.html">My favorites</a></li>
       <li role="presentation" class="active"><a href="./food_finder.html">Food finder</a></li>
     </ul>
+<!--
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top img-responsive" src="../images/hamburger_smaller.jpg" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">Hamburger</h4>
+            <div class="btn-group" role="group" aria-label="..." style="width: 100%;">
+	  	        <button type="button" class="btn btn-default">
+	  		       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	  	        </button>
+	  	        <button type="button" class="btn btn-default">
+	  		       <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default">
+	  		       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="card" style="width: 90%; text-align: center; ">
+        <div class="card-block">
+            <img class="cardPic img-responsive" src="../images/hamburger_medium.jpg" alt="Hamburger">
+            <h4 class="card-title">Hamburger</h4>
+  	        <button type="button" class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-success">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </button>
 
-</head>
-<body>
-	<div class="btn-group" role="group" aria-label="...">
-	  	<button type="button" class="btn btn-default">
-	  		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-	  	</button>
-	  	<button type="button" class="btn btn-default">
-	  		<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-		</button>
-	  <button type="button" class="btn btn-default">
-	  		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-	  </button>
-	</div>
+        </div>
+    </div>
+    
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
