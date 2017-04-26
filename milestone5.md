@@ -14,3 +14,9 @@ Aaron Hurtado:
 
 Trung Do:
 <br> For this milestone, I created the map page of the app. The map is hardcoded to show La Jolla right now, but user will be able to choose a random address/ location in the future. I also created a list of food that is chosen by user in the other page, and the map page will show all restaurants in the area that has that specific food. I also implemented 2 buttons that let user switches between current 2 pages. </br>
+
+
+<h2>Map Page:</h2>
+![Map Page](/images/map_page1.png)
+<h2>Food Finder Page:</h2>
+![Food Finder Page](/images/foodfinder_page1.png)
