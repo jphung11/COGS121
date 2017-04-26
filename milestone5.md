@@ -11,3 +11,6 @@ For this milestone, I contributed in helping out with the finalizing of our web 
 
 Aaron Hurtado:
 <br> So far I have been teaching myself how to use bootstrap in order to help make the UI mobile friendly. I have also been researching other frameworks besides bootstrap such as semantic ui. I have also been working on re-designing the ui and overall flow of the app based on the various feedback we have been getting in order to make our app more user friendly and intuitive. <br>
+
+Trung Do:
+<br> For this milestone, I created the map page of the app. The map is hardcoded to show La Jolla right now, but user will be able to choose a random address/ location in the future. I also created a list of food that is chosen by user in the other page, and the map page will show all restaurants in the area that has that specific food. I also implemented 2 buttons that let user switches between current 2 pages. </br>
