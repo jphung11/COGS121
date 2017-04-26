@@ -17,6 +17,7 @@ Trung Do:
 
 
 <h2>Map Page:</h2>
-![Map Page](../images/map_page1.png)
+<img src="https://cloud.githubusercontent.com/assets/16699899/25457439/3201164a-2a8b-11e7-9fd2-2b18d0fa914f.png" width="90%"></img> 
+<br>
 <h2>Food Finder Page:</h2>
-![Food Finder Page](../images/foodfinder_page1.png)
+<img src="https://cloud.githubusercontent.com/assets/16699899/25457433/267ff642-2a8b-11e7-89dc-bb47c1afa664.png" width="90%"></img> 
