@@ -3,4 +3,8 @@ Tae Hee Kim:
 "final" vision for our app and what core features it should contain for now.
 When the marker of a specific food location is clicked on, an information textbox will pop up providing the name 
 and address of the said restaurant. For this milestones, I also researched a bit on how one should link directions to the said marker using 
-a 3rd party app (aka Google Maps).</br>
+a 3rd party app (aka Google Maps).<br>
+
+Jennifer Phung:
+<br>
+For this milestone, I contributed in helping out with the finalizing of our web app idea and figuring out the goals/problems we want to approach with our idea. In addition, I implemented the core interface for the food finder page that the user will be interacting with for a majority of the time they use our app. To show the desired interaction with this page, I have also implemented, through hardcoding with Javascript, a way for users/testers to see what the expected result of clicking the like button would be on the food finder page.<br>
