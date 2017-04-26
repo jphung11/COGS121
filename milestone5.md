@@ -17,6 +17,6 @@ Trung Do:
 
 
 <h2>Map Page:</h2>
-![Map Page](/images/map_page1.png)
+![Map Page](../images/map_page1.png)
 <h2>Food Finder Page:</h2>
-![Food Finder Page](/images/foodfinder_page1.png)
+![Food Finder Page](../images/foodfinder_page1.png)
