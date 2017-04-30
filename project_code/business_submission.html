@@ -5,20 +5,38 @@
     <script type="text/javascript" src="maps_interaction.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&libraries=places"></script>
     <link rel="stylesheet" type="text/css" href="styling.css">
-
+    <script>
+      // Initialize Firebase
+      // TODO: Replace with your project's customized code snippet
+      var config = {
+        apiKey: "<API_KEY>",
+        authDomain: "<PROJECT_ID>.firebaseapp.com",
+        databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+        storageBucket: "<BUCKET>.appspot.com",
+        messagingSenderId: "<SENDER_ID>",
+      };
+      firebase.initializeApp(config);
+    </script>
 <head>
+  <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#">My favorites</a></li>
+      <li role="presentation"><a href="./food_finder.html">Food Finder</a></li>
+      <li role="presentation"><a href="./business_submission.html">Business</a></li>
+
+    </ul>
 </head>
 <body>
     <form class="form-inline">
       <label class="sr-only" for="inlineFormInput">Name</label>
       <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Your name">
       </br>
-      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-        <div class="input-group-addon">Restaurant</div>
-        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
-      </div>
-
+      <label class="sr-only" for="inlineFormInput">Restaurant</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Restaurant">
+      </br>
+      <label class="sr-only" for="inlineFormInput">Food</label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="What dish do you want to advertise in Foody?">
+      </br>
+      <label for="fileToUpload">Food image</label>
       <form action="upload.php" method="post" enctype="multipart/form-data">
       <input type="file" name="fileToUpload" id="fileToUpload">
       </form>
