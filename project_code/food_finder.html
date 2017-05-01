@@ -7,11 +7,73 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styling.css">
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
+        authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
+        databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
+        projectId: "foody-cogs121-1492804395262",
+        storageBucket: "foody-cogs121-1492804395262.appspot.com",
+        messagingSenderId: "701518273477"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+        var RestCnt = 0;
+        var MenuCnt = 0;
+        var restaurants = firebase.database().ref('Restaurants').once('value').then(function(snapshot) {
+            var CurrRestaurants = snapshot.val();
+            var i;
+            var j;
+//            for (i = 0; i < CurrRestaurants.length; i++) {
+//                console.log("Restaruant: " + CurrRestaurants[i].Name);
+//                for (j = 0; j < CurrRestaurants[i].Menu.length; j++) {
+//                    console.log("Dish's Name: " + CurrRestaurants[i].Menu[j].Name);
+//                }
+//            }
+            
+//            $(document).ready(function(){
+//                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
+//                document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+//                document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+//            });
+                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
+                document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                MenuCnt++;
+//                if(MenuCnt >= CurrRestaurants[RestCnt].Menu.length) {
+//                    RestCnt++;
+//                    MenuCnt = 0;
+//                }
+            
+        });
+        
+        
         function change() {
-            document.getElementById("foodPic").src="../images/orangechicken.jpg";
-            document.getElementById("foodPic").alt="Orange Chicken";
-            document.getElementById("foodName").innerHTML="Orange Chicken";
+            firebase.database().ref('Restaurants').once('value').then(function(snapshot) {
+                var CurrRestaurants = snapshot.val();
+                if(MenuCnt >= CurrRestaurants[RestCnt].Menu.length) {
+                    RestCnt++;
+                    MenuCnt = 0;
+//                    console.log("RestCnt: "+ RestCnt);
+                    if (RestCnt >= CurrRestaurants.length) {
+                        document.getElementById("foodPic").src="../images/nomore.png"
+                        document.getElementById("foodPic").alt="No more";
+                        document.getElementById("foodName").innerHTML="Currently no more dishes! :(";
+                        return;
+                    }
+                }
+                
+                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
+                document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                
+                MenuCnt++;
+//                console.log("CurrRestaurants: " + CurrRestaurants.length);
+//                console.log("MenuCnt: " + MenuCnt);
+            });
         }
     </script>
 </head>
@@ -23,8 +85,13 @@
 
     <div class="card" style="width: 90%; text-align: center; ">
         <div class="card-block">
+            <img id="foodPic" class="cardPic img-responsive" alt="Food Picture">
+            <h4 class="card-title" id="foodName"></h4>
+
+<!--
             <img id="foodPic" class="cardPic img-responsive" src="../images/hamburger_medium.jpg" alt="Hamburger">
             <h4 class="card-title" id="foodName">Hamburger</h4>
+-->
   	        <button type="button" class="btn btn-danger">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
