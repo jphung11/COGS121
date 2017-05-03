@@ -1,6 +1,8 @@
 //make a variable to keep track of data coming from firebase
 
 var data= [];
+var place;
+var place_text;
   // Initialize Firebase
       // TODO: Replace with your project's customized code snippet
 var config = {
@@ -23,6 +25,12 @@ ref.on("value", function (snapshot){
  //when the data updates at firebase, put it in the data variable
   data= snapshot.val();
 })
+String.prototype.format = function () {
+        var args = [].slice.call(arguments);
+        return this.replace(/(\{\d+\})/g, function (a){
+            return args[+(a.substr(1,a.length-2))||0];
+        });
+};
 //Entire Form (handler)
 function autocomplete(){
   autocomplete = new google.maps.places.Autocomplete(
@@ -31,9 +39,50 @@ function autocomplete(){
              // types: ['restaurant'],
               //componentRestrictions: countryRestrict
             });
-       
+  autocomplete.addListener('place_changed', function() {
+            place = autocomplete.getPlace();
+            console.log(place)
+          });
         // Add a DOM event listener to react when the user selects a country.
 }
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
+function makeCorsRequest() {
+  // This is a sample server that supports CORS.
+  var url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid={0}&key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q'.format(place_id)
+  var xhr = createCORSRequest('GET', url);
+  if (!xhr) {
+    alert('CORS not supported');
+    return;
+  }
+
+  // Response handlers.
+  xhr.onload = function() {
+    place_text = xhr.responseText;
+    alert('Response from CORS request to ' + url+ ' ' +place_text);
+  };
+
+  xhr.onerror = function() {
+    alert('Woops, there was an error making the request.');
+  };
+
+  xhr.send();
+}
+
 $(document).on("click", "#submit", function(){
   var $form = $(this);
   console.log("Submit to Firebase");
@@ -54,25 +103,31 @@ $(document).on("click", "#submit", function(){
   console.log(description);
   var selectedFile = document.getElementById('food_image').files[0];
   var imgRef   = storageRef.child( 'image');
-
+  place_id = place["place_id"]
+  request_URL = 'https://maps.googleapis.com/maps/api/place/details/json?placeid={0}&key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q'.format(place_id)
+  makeCorsRequest(request_URL)
+  // console.log(httpGetAsync(request_URL))
   //take the values from the form, and put them in an object
-  var newActivity= {
+  var post_restaurant= {
     "description": description,
     "food-name": food_name,
     "restaurant": restaurant,
+    ///"info" : place_text
     //"image" : imgRef
   }
+    //  var json = JSON.parse(place_text);
+
   //put new object in data array
   console.log(data)
   var newPostRef = ref.push();
-  newPostRef.set(newActivity, function(err){
+  newPostRef.set(post_restaurant, function(err){
       if(err){
         alert("Data no go");
       }
     });
-  imgRef.put(selectedFile).then(function(snapshot) {
-  console.log('Uploaded a blob or file!');
-  });
+  // imgRef.put(selectedFile).then(function(snapshot) {
+  // console.log('Uploaded a blob or file!');
+  // });
   console.log(data);
   
     //send the new data to Firebase
@@ -81,6 +136,9 @@ $(document).on("click", "#submit", function(){
    //      alert("Data no go");
    //    }
    //  });
+  setTimeout( console.log(json), 2000 );
+
+  //  console.log(json);
 
     return false;
 });
