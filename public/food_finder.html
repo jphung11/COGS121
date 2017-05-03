@@ -43,6 +43,31 @@
                 document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
                 document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
                 document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                document.getElementById("restName").innerHTML=CurrRestaurants[RestCnt].Name;
+            
+                var k;
+                for (k = 0; k < parseInt(CurrRestaurants[RestCnt].Menu[MenuCnt].Rating); k++) {
+                    var spanfilled = document.createElement("span");
+                    var elem1 = document.createElement("img");
+                    elem1.src = "../images/starfilled.png";
+                    elem1.setAttribute("class", "img-responsive");
+                    spanfilled.appendChild(elem1);
+                    
+                    document.getElementById("stars").appendChild(spanfilled);
+                }
+
+                for (; k < 5; k++) {
+                    var spanempty = document.createElement("span");
+                    var elem2 = document.createElement("img");
+                    elem2.src = "../images/starempty.png";
+                    elem2.setAttribute("class", "img-responsive");
+                    spanempty.appendChild(elem2);
+                    
+                    document.getElementById("stars").appendChild(spanempty);
+                }
+            
+            
+            
                 MenuCnt++;
 //                if(MenuCnt >= CurrRestaurants[RestCnt].Menu.length) {
 //                    RestCnt++;
@@ -63,6 +88,8 @@
                         document.getElementById("foodPic").src="../images/nomore.png"
                         document.getElementById("foodPic").alt="No more";
                         document.getElementById("foodName").innerHTML="Currently no more dishes! :(";
+                        document.getElementById("restName").innerHTML="";
+                        document.getElementById("stars").innerHTML="";
                         return;
                     }
                 }
@@ -70,6 +97,29 @@
                 document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
                 document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
                 document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                document.getElementById("restName").innerHTML=CurrRestaurants[RestCnt].Name;
+                
+                document.getElementById("stars").innerHTML="";
+                var k;
+                for (k = 0; k < parseInt(CurrRestaurants[RestCnt].Menu[MenuCnt].Rating); k++) {
+                    var spanfilled = document.createElement("span");
+                    var elem1 = document.createElement("img");
+                    elem1.src = "../images/starfilled.png";
+                    elem1.setAttribute("class", "img-responsive");
+                    spanfilled.appendChild(elem1);
+                    
+                    document.getElementById("stars").appendChild(spanfilled);
+                }
+
+                for (; k < 5; k++) {
+                    var spanempty = document.createElement("span");
+                    var elem2 = document.createElement("img");
+                    elem2.src = "../images/starempty.png";
+                    elem2.setAttribute("class", "img-responsive");
+                    spanempty.appendChild(elem2);
+                    
+                    document.getElementById("stars").appendChild(spanempty);
+                }
                 
                 MenuCnt++;
 //                console.log("CurrRestaurants: " + CurrRestaurants.length);
@@ -90,11 +140,21 @@
         <div class="card-block">
             <img id="foodPic" class="cardPic img-responsive" alt="Food Picture">
             <h4 class="card-title" id="foodName"></h4>
-
+            <p class="card-text" id="restName"></p>
 <!--
             <img id="foodPic" class="cardPic img-responsive" src="../images/hamburger_medium.jpg" alt="Hamburger">
             <h4 class="card-title" id="foodName">Hamburger</h4>
 -->
+            
+<!--
+            <div class="rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+-->
+            
+            <div class="rating" id="stars">
+            </div>
+            
   	        <button type="button" class="btn btn-danger" onclick="change()">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>

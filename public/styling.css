@@ -9,6 +9,33 @@ body {
 }
 
 .cardPic {
-    width: 400;
+    width: 400px;
     margin: 0 auto;
 }
+
+.card-title {
+    font-weight: bold;
+}
+
+/*
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  
+}*/
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 3em;
+}
+/*
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}*/
