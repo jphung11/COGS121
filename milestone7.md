@@ -14,7 +14,8 @@ For this milestone, I pair programmed with Jennifer. We set up a database using 
 of food it gets them from our database instead of just having them locally stored. Thus when you like or dislike a food item, the next
 food dish it displays can be more dynamic in the future. Additionally, I set up deploying our web app using Firebase so now we have a live url that we can see our web app on and share with others. The url is in our Readme file in this repo for convenience. </p>
 
-<br>
+<h1>Screenshots</h1>
+<hr>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25677392/9d8e9864-2ffa-11e7-9997-13210cd1e6df.png" width="45%"></img> <img src="https://cloud.githubusercontent.com/assets/16699899/25677397/a52dd314-2ffa-11e7-9160-3e48575023f6.png" width="45%"></img> 
 <p>
 The above two pictures shows our Food Finder feature. The picture on the top is the interface that the user will see and the picture on the bottom is a screen shot of our database on Firebase that the Food Finder feature is pulling data from. These two pictures show the implementation of reading from a pre-set database for this week's milestone.</p>
