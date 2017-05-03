@@ -13,7 +13,12 @@ For this milestone, I worked on researching how to read the database so that we 
 For this milestone, I pair programmed with Jennifer. We set up a database using Firebase and made it such that when our app pulls pictures
 of food it gets them from our database instead of just having them locally stored. Thus when you like or dislike a food item, the next
 food dish it displays can be more dynamic in the future. Additionally, I set up deploying our web app using Firebase so now we have a live url that we can see our web app on and share with others. The url is in our Readme file in this repo for convenience. </p>
-
+<h5>Trung Do: </h5>
+<p>
+For this milestone,I worked on 3 things:
+- Implemented the business page so business owner can post the food that they want to advertise to the app. The info then will be stored in Firebase.
+- In the form, I also implemented a Google Place autocomplete so they will choose the exact location of a restaurant, not a make up one.
+- I'm currently working on how to query all restaurants given a user location and a search radius. </p>
 <h1>Screenshots</h1>
 <hr>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25677392/9d8e9864-2ffa-11e7-9997-13210cd1e6df.png" width="45%"></img> <img src="https://cloud.githubusercontent.com/assets/16699899/25677397/a52dd314-2ffa-11e7-9160-3e48575023f6.png" width="45%"></img> 
