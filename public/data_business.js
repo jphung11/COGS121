@@ -74,6 +74,7 @@ function makeCorsRequest() {
   xhr.onload = function() {
     place_text = xhr.responseText;
     alert('Response from CORS request to ' + url+ ' ' +place_text);
+    console.log(place_text)
   };
 
   xhr.onerror = function() {
