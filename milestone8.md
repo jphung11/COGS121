@@ -22,3 +22,6 @@ Trung Do:
 <br>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25826620/55cea234-33fc-11e7-85d5-a52ff74ef17d.png" width="90%"></img> 
 <br>
+The top pic shows the recommendation tab of the app. It will recommend you dishes/ food base on what you liked in the past. If you tab to any food, it will like you to "tinder-like" page to read more details of the food to either like or dislike it.
+The bottom pic shows the Ad-place, which displays restaurants that pay to be advertised in the app. Each place will also shows its most popular (most picked) food/dishes. You can click to one of the place and it will show more details about the foods and direction to the restaurant.
+
