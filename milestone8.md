@@ -10,7 +10,7 @@ Jennifer Phung:
 <br>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25825994/f8719472-33f9-11e7-84c0-f09abeb04f76.png" width="90%"></img> 
 <br>
-This paper prototype shows the simple interface that we could potentially decide to use for our user login.
+The paper prototype above shows the simple interface that we could potentially decide to use for our user login.
 <br>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25826120/6b0ba6da-33fa-11e7-9470-6705f01d5a20.png" width="45%"></img> <img src="https://cloud.githubusercontent.com/assets/16699899/25826126/71eb0dd8-33fa-11e7-9297-37d1591f8f5c.png" width="45%"></img> 
 <br>
