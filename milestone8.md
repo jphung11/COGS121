@@ -6,6 +6,7 @@ Aaron Hurtado:
 <br>
 This paper prototype demonstrates a user changing their settings. In this example, the user is changing the search distance the app uses when suggesting food dishes from nearby local restaraunts. Users can change the search distance with a slider tool. The farther to the right the farther distance the app will use, similarly moving the slider to the left decreases the distance.
 <br>
+<br>
 Jennifer Phung:
 <br>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25825994/f8719472-33f9-11e7-84c0-f09abeb04f76.png" width="90%"></img> 
