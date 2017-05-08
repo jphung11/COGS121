@@ -25,3 +25,9 @@ Trung Do:
 The top pic shows the recommendation tab of the app. It will recommend you dishes/ food base on what you liked in the past. If you tab to any food, it will like you to "tinder-like" page to read more details of the food to either like or dislike it.
 The bottom pic shows the Ad-place, which displays restaurants that pay to be advertised in the app. Each place will also shows its most popular (most picked) food/dishes. You can click to one of the place and it will show more details about the foods and direction to the restaurant.
 
+Tae Hee Kim:
+<br>
+![Pic](http://i.imgur.com/869nw9L.jpg)
+<br>
+For this paper prototype, it shows how the new map UI will work. The food will be listed in carasoul format with pictures and descriptions rather than a huge list of text people will have to scroll down through. This way, the app will provide even more information about the particular food rather than being super simplistic and making the user wonder what food at what restaurant it was.
+<br>
