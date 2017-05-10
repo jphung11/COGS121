@@ -11,7 +11,10 @@
 
 <p>For this milestone, I worked on trying to get the carousel list to work based on the database of our firebase. I ran into a few problems such as now knowing how to read from the database and constantly append to the carousel list. My next problem after that was trying to append the caption to the image from the database. However, that was easily solved by using concat.</p>
 
+<h5>Trung Do:</h5>
 
+<p>For this milestone, I worked on displaying all contents that business owner submitted in the app. I was struggling with dealing how to store the location to the database (from the business form) at first (call-back functions). However, I were finally able to store it in the database and then query in the map page. Each location also has food images.
+I will try to make a query that shows all near by good food in the next milestone. We then can use it to display all foods in near by distance to Tinder-like page.</p>
 <hr>
 <h1>Screenshots</h1>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25921348/ea0e0fc8-3589-11e7-8ed8-cf1fdd361f06.png" width="90%"></img> 
