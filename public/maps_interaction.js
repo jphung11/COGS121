@@ -11,7 +11,7 @@ function initMap() {
       zoom: 11
     });
   service = new google.maps.places.PlacesService(map);
-
+  infowindow = new google.maps.InfoWindow();
 }
         
 function initialize() {
@@ -50,7 +50,15 @@ function createMarker(place) {
     animation: google.maps.Animation.DROP,
     position: place.geometry.location
   });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>'+
+      '<br>' + place.formatted_address);
+    infowindow.open(map,this);
+  })
+
   markersArray.push(marker);
+
 
 }
 function pickPlace(param) {
