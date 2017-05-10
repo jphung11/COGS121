@@ -11,6 +11,12 @@
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-cloud.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
       <script type="text/javascript" src="maps_interaction.js"></script>
+<<<<<<< HEAD
+            <script type="text/javascript" src="carousel.js"></script>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+=======
+>>>>>>> 6c043994301148bd9ca6dc4c3bcd36be1ce5d968
 
     <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&callback=initMap">
@@ -24,26 +30,65 @@
     </ul>
 
     <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
-  </head>
-  <body>
+     #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
     <div id="map"></div>
     <script type="text/javascript">
       initMap();
       showAllPlaces();
     </script>
-    <div class="list-group">
-  <button type="button" onclick="pickPlace(this)" class="list-group-item">Orange Chicken</button>
-  <button type="button" onclick="pickPlace(this)" class="list-group-item">Pizza</button>
-  <button type="button" onclick="pickPlace(this)" class="list-group-item">Milk Tea</button>
-  <button type="button" onclick="pickPlace(this)" class="list-group-item">Hamburger</button>
-  <button type="button" onclick="pickPlace(this)" class="list-group-item">Pasta</button>
+
+  <div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <!-- Carousel items -->
+      <div class="carousel-inner" id="two">
+ 
+      <div class="item active">
+        <!-- Static Header -->
+        <div class="header-text hidden-xs">
+          <div class="col-md-12 text-center">
+          <br>
+          <br>
+            <h2>
+              <span>Welcome to <strong>Foody</strong></span>
+            </h2>
+            <br>
+            <h3>
+              <span>Navigate through your recommended dishes.</span>
+            </h3>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+              <script type="text/javascript">
+      addFood();
+      </script>
+      </div>
+
+      </div>
+
+
+      <!-- Carousel nav -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+  </div>
+
 </div>
-    
-  </body>
+
+</body>
 </html>
 
