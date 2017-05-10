@@ -17,13 +17,17 @@
         imageRef = firebase.storage().ref(childData["img_name"])
 
         imageRef.getDownloadURL().then(function(url) {
-          image = "<img src=".concat(url).concat(" style='height:260px;'></img>");
+          image = "<img src=".concat(url).concat(" style='width:100%;height:260px;'></img>");
           var d = document.createElement("DIV");
           //var content = document.createTextNode('<strong>' + childData["food-name"] + '</strong><br>'+childData["restaurant"]+'<br>' +image);
-          var content = image + '<div class="carousel-caption><h3>' + childData["food-name"] + '</h3><p>'+childData["restaurant"]+'<p></div>';
+          var sub = "<div class='carousel-caption'><h3>".concat(childData["food-name"]).concat("</h3><p>").concat(childData["restaurant"]).concat("<p></div>");
+          //var content = image + '<div class="carousel-caption><h3>' + childData["food-name"] + '</h3><p>'+childData["restaurant"]+'<p></div>';
+          var content = image.concat(sub);
 
           d.className = "item";
           d.innerHTML = content;
+
+          console.log(d);
 
 /*
           var c = document.createElement("DIV");
