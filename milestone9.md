@@ -9,5 +9,8 @@
 
 <hr>
 <h1>Screenshots</h1>
+<img src="https://cloud.githubusercontent.com/assets/16699899/25921348/ea0e0fc8-3589-11e7-8ed8-cf1fdd361f06.png" width="90%"></img> 
+<p>The screenshot above shows that the user's submission from the form is not added as a pin to the map. The map is not getting pins from a simple query anymore.</p>
+<br>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25916820/ddf57794-357a-11e7-81cc-02a3e8c91f2e.png" width="90%"></img> <img src="https://cloud.githubusercontent.com/assets/16699899/25916885/168731ba-357b-11e7-9745-af47ff81f45a.png" width="90%"></img> 
 <p>The pictures above shows the food finder grabbing the first picture from the data that is submitted through the form we have.</p>
