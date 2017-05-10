@@ -7,6 +7,11 @@
 
 <p>For this milestone, I worked on trying to get the foodfinder to get the food data from the dishes database that is actually submitted. However, I ran into some problems trying to figure out how to go through the unique ids given to each dish upon submission. As a result, the code I implemented is specifically coded to index the unique id at the moment to see if it works accordingly. Through testing around with that, I found that to index each dish I would need the unique id string and that it will show properly with it. However, I still have the problem of how I can get the dish's info into my code without knowing the unique id.</p>
 
+<h5>Tae Hee Ki:</h5>
+
+<p>For this milestone, I worked on trying to get the carousel list to work based on the database of our firebase. I ran into a few problems such as now knowing how to read from the database and constantly append to the carousel list. My next problem after that was trying to append the caption to the image from the database. However, that was easily solved by using concat.</p>
+
+
 <hr>
 <h1>Screenshots</h1>
 <img src="https://cloud.githubusercontent.com/assets/16699899/25921348/ea0e0fc8-3589-11e7-8ed8-cf1fdd361f06.png" width="90%"></img> 
