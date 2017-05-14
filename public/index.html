@@ -13,6 +13,9 @@
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
 <script type="text/javascript" src="maps_interaction.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+
 <script type="text/javascript" src="carousel.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,12 +25,12 @@
     </script> -->
 
 <head>
-  <ul class="nav nav-pills">
+  <!--<ul class="nav nav-pills">
     <li role="presentation" class="active"><a href="#">My favorites</a></li>
     <li role="presentation"><a href="./food_finder.html">Food Finder</a></li>
     <li role="presentation"><a href="./business_submission.html">Business</a></li>
 
-  </ul>
+  </ul>-->
 
   <style>
     #map {
@@ -38,6 +41,24 @@
 </head>
 
 <body>
+
+<div class="ui secondary pointing menu">
+  <a class="active item" href="./index.html">
+    My favorites
+  </a>
+  <a class="item" href="./food_finder.html">
+    Food finder
+  </a>
+  <a class="item" href="./business_submission.html">
+    Business
+  </a>
+  <div class="right menu">
+    <a class="ui item" href="./food_finder.html">
+      Logout
+    </a>
+  </div>
+</div>
+
   <div id="map"></div>
   <script type="text/javascript">
     initMap();

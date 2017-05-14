@@ -13,6 +13,9 @@
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-cloud.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+
     <script type="text/javascript" src="data_business.js"></script>
 
     <script>
@@ -27,14 +30,32 @@
       // firebase.initializeApp(config);
     </script>
 <head>
-  <ul class="nav nav-pills">
+  <!--<ul class="nav nav-pills">
       <li role="presentation"><a href="./index.html">My favorites</a></li>
       <li role="presentation"><a href="./food_finder.html">Food Finder</a></li>
       <li role="presentation"class="active"><a href="./business_submission.html">Business</a></li>
 
-    </ul>
+    </ul>-->
 </head>
+
 <body>
+
+  <div class="ui secondary pointing menu">
+  <a class="item" href="./index.html">
+    My favorites
+  </a>
+  <a class="item" href="./food_finder.html">
+    Food finder
+  </a>
+  <a class="active item" href="./business_submission.html">
+    Business
+  </a>
+  <div class="right menu">
+    <a class="ui item" href="./food_finder.html">
+      Logout
+    </a>
+  </div>
+</div>
     <form id="food-submission" class="form-inline">
       <label class="sr-only" for="inlineFormInput">Name</label>
       <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="user" placeholder="Your name">
