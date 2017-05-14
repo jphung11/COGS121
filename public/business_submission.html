@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-  
+
 <html>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script type="text/javascript" src="maps_interaction.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&libraries=places"></script>
-    <link rel="stylesheet" type="text/css" href="styling.css">
-    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-cloud.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous">
+<script type="text/javascript" src="maps_interaction.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&libraries=places"></script>
+<link rel="stylesheet" type="text/css" href="styling.css">
+<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-cloud.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
 
-    <script type="text/javascript" src="data_business.js"></script>
+<script type="text/javascript" src="data_business.js"></script>
 
-    <script>
-      // var config = {
-      //   apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
-      //   //authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
-      //   databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
-      //   projectId: "foody-cogs121-1492804395262",
-      //   storageBucket: "foody-cogs121-1492804395262.appspot.com",
-      //   //messagingSenderId: "701518273477"
-      // };
-      // firebase.initializeApp(config);
-    </script>
+<script>
+  // var config = {
+  //   apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
+  //   //authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
+  //   databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
+  //   projectId: "foody-cogs121-1492804395262",
+  //   storageBucket: "foody-cogs121-1492804395262.appspot.com",
+  //   //messagingSenderId: "701518273477"
+  // };
+  // firebase.initializeApp(config);
+</script>
+
 <head>
   <!--<ul class="nav nav-pills">
       <li role="presentation"><a href="./index.html">My favorites</a></li>
@@ -41,22 +43,58 @@
 <body>
 
   <div class="ui secondary pointing menu">
-  <a class="item" href="./index.html">
+    <a class="item" href="./index.html">
     My favorites
   </a>
-  <a class="item" href="./food_finder.html">
+    <a class="item" href="./food_finder.html">
     Food finder
   </a>
-  <a class="active item" href="./business_submission.html">
+    <a class="active item" href="./business_submission.html">
     Business
   </a>
-  <div class="right menu">
-    <a class="ui item" href="./food_finder.html">
+    <div class="right menu">
+      <a class="ui item" href="./food_finder.html">
       Logout
     </a>
+    </div>
   </div>
-</div>
-    <form id="food-submission" class="form-inline">
+
+  <div class="ui container">
+
+    <h1 class="ui header">Food Submission Form</h1>
+    </br>
+
+    <form id="food-submission" class="ui form">
+      <div class="field">
+        <label>Your Name</label>
+        <input type="text" name="first-name" id="user" placeholder="Your Name">
+      </div>
+      <div class="field">
+        <label>Restaurant</label>
+        <input type="text" name="last-name" id="restaurant" placeholder="Restaurant">
+        <script>
+          autocomplete();
+        </script>
+      </div>
+      <div class="field">
+        <label>Food Name</label>
+        <input type="text" name="last-name" id="food-name" placeholder="Food Name">
+      </div>
+      <div class="field">
+        <label for="food_image">Food image</label>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+          <input type="file" name="fileToUpload" id="food_image">
+      </div>
+      <div class="field">
+        <label>Food Description</label>
+        <textarea rows="2" id="description"></textarea>
+      </div>
+      <button class="ui primary button" type="submit" id="submit">Submit</button>
+      </form>
+
+  </div>
+
+  <!--<form id="food-submission" class="form-inline">
       <label class="sr-only" for="inlineFormInput">Name</label>
       <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="user" placeholder="Your name">
       </br>
@@ -78,6 +116,9 @@
         <textarea class="form-control" id="description" rows="3"></textarea>
       </div>
       <button id="submit" type="submit" class="btn btn-primary" onclick="window.location.href='./index.html'">Submit</button>
-    </form>
+    </form>-->
+
+
 </body>
+
 </html>
