@@ -11,13 +11,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 
     <script type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="styling.css">
+
+    <script type="text/javascript">$(document).ready(function(){$(".rating").rating();});</script>
 
     <script>
         // Initialize Firebase
@@ -222,14 +224,18 @@
             <div class="content">
                 <span class="right floated">
                     Rating:
-                    <div class="ui star rating" data-rating="3"></div>
+                    <div class="ui star rating" data-rating="3" data-max-rating="5"></div>
+                    <div class="ui star rating" id="rating"></div>
+                    <div class="ui rating" data-rating="3" data-max-rating="5"></div>
                 </span>
                 <a class="header" id="foodName"></a>
                 <div class="meta">
                     <span class="date" id="restName"></span>
                 </div>
-                <div class="description">
+                <div class="description" id="descrip">
                     A delicious dish.
+                    <div class="ui rating"></div>
+                    <div class="ui star rating" data-rating="4"></div>
                 </div>
             </div>
             <div class="extra content">
@@ -257,16 +263,16 @@
                 </div>-->
                 <div class="ui one column centered grid">
                     <div class="center aligned column">
-                        <button onclick="change()" class="circular ui icon basic large toggle grey button">
+                        <button onclick="change()" class="circular ui icon basic large grey button">
                         <i class="icon history"></i>
                     </button>
-                    <button onclick="change()" class="circular ui icon basic large toggle red button">
+                    <button onclick="change()" class="circular ui icon basic large red button">
                         <i class="icon remove"></i>
                     </button>
-                    <button onclick="change()" class="circular ui icon basic large toggle green button">
+                    <button onclick="change()" class="circular ui icon basic large green button">
                         <i class="icon heart"></i>
                     </button>
-                    <button onclick="change()" class="circular ui icon basic large toggle blue button">
+                    <button onclick="change()" class="circular ui icon basic large blue button">
                         <i class="icon star"></i>
                     </button>
                     </div>
