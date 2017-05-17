@@ -39,3 +39,7 @@ body {
    content: "\2605";
    position: absolute;
 }*/
+
+.listCard {
+    margin-bottom: 10px;
+}
