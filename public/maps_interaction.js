@@ -2,6 +2,7 @@ var map;
 var service;
 var infowindow;
 var markersArray = [];
+var geoMarker = [];
 var config = {
   apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
   databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
@@ -9,6 +10,8 @@ var config = {
   storageBucket: "foody-cogs121-1492804395262.appspot.com",
 };
 firebase.initializeApp(config);
+var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
+
 function initMap() {
   var ucsd = new google.maps.LatLng(32.8800604,-117.2340135);
 
@@ -18,6 +21,71 @@ function initMap() {
     });
   service = new google.maps.places.PlacesService(map);
   infowindow = new google.maps.InfoWindow();
+
+  var geolocdiv = document.createElement('div');
+  var geoloccont = new GeolocationControl(geolocdiv, map);
+
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(geolocdiv);
+}
+
+function GeolocationControl(controlDiv, map) {
+
+    // Set CSS for the control button
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = '#444';
+    controlUI.style.borderStyle = 'solid';
+    controlUI.style.borderWidth = '1px';
+    controlUI.style.borderColor = 'white';
+    controlUI.style.height = '28px';
+    controlUI.style.marginTop = '5px';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Click to center map on your location';
+    controlDiv.appendChild(controlUI);
+
+    // Set CSS for the control text
+    var controlText = document.createElement('div');
+    controlText.style.fontFamily = 'Arial,sans-serif';
+    controlText.style.fontSize = '10px';
+    controlText.style.color = 'white';
+    controlText.style.paddingLeft = '10px';
+    controlText.style.paddingRight = '10px';
+    controlText.style.marginTop = '8px';
+    controlText.innerHTML = 'Current Location';
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners to geolocate user
+    google.maps.event.addDomListener(controlUI, 'click', geolocate);
+}
+
+function clearGeo() {
+  for (var i = 0; i < geoMarker.length; i++ ) {
+    geoMarker[i].setMap(null);
+  }
+  geoMarker.length = 0;
+}
+
+function geolocate() {
+    clearGeo();
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(function (position) {
+
+            var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+            // Create a marker and center map on user location
+            marker = new google.maps.Marker({
+                position: pos,
+                animation: google.maps.Animation.DROP,
+                map: map,
+                draggable: true,
+                icon: im
+            });
+
+            map.setCenter(pos);
+            geoMarker.push(marker);
+        });
+    }
 }
         
 function initialize() {
