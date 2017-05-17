@@ -10,6 +10,12 @@ For this milestone, I worked on creating a button that would request for your cu
 <h5>Jennifer Phung:</h5>
 <p>For this milestone, I worked on creating a new page with the list view of the user's favorited foods. I looked into different ways of visualization and ended up choosing the card list view. Currently, the list of foods shown on the favorited list is hardcoded in. However, we will try to get the favorite button on food finder working so that the favorites list will actually be pulling out data from where it is supposed to.</p>
 
+<h5>Trung Do :</h5>
+<p>For this milestone, I worked on fixing existing bugs. There are 2 bugs that I fixed.
+</p>
+- The submission page automatically reload and the data would not go to Firebase.
+- The map markers do not show the location properly.
+
 <h1>Screenshots</h1>
 <img src="https://cloud.githubusercontent.com/assets/16699899/26170753/5c53d924-3af7-11e7-8f73-7ec9b0791d87.png" width="90%"></img> 
 <p>The screenshot above shows the current location button implementation. The blue pin in the screenshot was added to allow the user to know where they currently are.</p>
