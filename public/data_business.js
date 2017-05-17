@@ -133,7 +133,8 @@ $(document).on("click", "#submit", function(){
   var selectedFile = document.getElementById('food_image').files[0];
 
   imageRef.put(selectedFile)
-  // console.log(data);
+
+  console.log("haha");
    var post_restaurant= {
     "description": description,
     "food-name": food_name,
@@ -149,7 +150,7 @@ $(document).on("click", "#submit", function(){
         alert("Data no go");
       }
     });
-  
+  event.preventDefault();
     //send the new data to Firebase
   	// ref.set(data, function(err){
    //    if(err){
@@ -158,5 +159,4 @@ $(document).on("click", "#submit", function(){
    //  });
 
   //  console.log(json);
-
 });
