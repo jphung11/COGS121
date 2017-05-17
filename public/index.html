@@ -24,93 +24,316 @@
     </script> -->
 
 <head>
-  <title>Foodie</title>
-  <!--<ul class="nav nav-pills">
-    <li role="presentation" class="active"><a href="#">My favorites</a></li>
-    <li role="presentation"><a href="./food_finder.html">Food Finder</a></li>
-    <li role="presentation"><a href="./business_submission.html">Business</a></li>
+    <title>Foodie - Food Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  </ul>-->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
 
-  <style>
-    #map {
-      height: 400px;
-      width: 100%;
-    }
-  </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="styling.css">
+
+    <script type="text/javascript">$(document).ready(function(){$(".rating").rating();});</script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
+            authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
+            databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
+            projectId: "foody-cogs121-1492804395262",
+            storageBucket: "foody-cogs121-1492804395262.appspot.com",
+            messagingSenderId: "701518273477"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script>
+        var RestCnt = 0;
+        var MenuCnt = 0;
+        var children = [];
+        var storage = firebase.storage();
+        var dishRef = firebase.database().ref('dishes')
+        dishRef.once('value', function (snapshot) {
+            snapshot.forEach(function (childSnapshot) {
+                var childKey = childSnapshot.key;
+                var childData = childSnapshot.val();
+                children.push(childKey);
+            });
+        });
+
+        console.log(children);
+
+        var restaurants = firebase.database().ref('dishes').once('value').then(function (snapshot) {
+            var CurrRestaurants = snapshot.val();
+            var i;
+            var j;
+            //            for (i = 0; i < CurrRestaurants.length; i++) {
+            //                console.log("Restaruant: " + CurrRestaurants[i].Name);
+            //                for (j = 0; j < CurrRestaurants[i].Menu.length; j++) {
+            //                    console.log("Dish's Name: " + CurrRestaurants[i].Menu[j].Name);
+            //                }
+            //            }
+
+            //            $(document).ready(function(){
+            //                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
+            //                document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+            //                document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+            //            });
+            //                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
+            //                document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+            //                document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+            //                document.getElementById("restName").innerHTML=CurrRestaurants[RestCnt].Name;
+
+            var storageRef = storage.ref(CurrRestaurants[children[MenuCnt]].img_name);
+            storageRef.getDownloadURL().then(url => {
+                document.getElementById("foodPic").setAttribute("src", url);
+            }).catch(error => {
+                console.log(error.message);
+            });
+
+            document.getElementById("foodPic").alt = CurrRestaurants[children[MenuCnt]]["food-name"];
+            document.getElementById("foodName").innerHTML = CurrRestaurants[children[MenuCnt]]["food-name"];
+            document.getElementById("restName").innerHTML = CurrRestaurants[children[MenuCnt]].restaurant;
+
+            //                console.log(CurrRestaurants['-Kjky85dqED-yKs4-jBd']);
+            //         var storageRef = storage.ref(CurrRestaurants['-Kjky85dqED-yKs4-jBd'].img_name);
+            //          storageRef.getDownloadURL().then( url => {
+            //            document.getElementById("foodPic").setAttribute("src",url);
+            //          }).catch( error => {
+            //            console.log(error.message);
+            //          });
+            ////                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
+            //                document.getElementById("foodPic").alt=CurrRestaurants['-Kjky85dqED-yKs4-jBd']["food-name"];
+            //                document.getElementById("foodName").innerHTML=CurrRestaurants['-Kjky85dqED-yKs4-jBd']["food-name"];
+            //                document.getElementById("restName").innerHTML=CurrRestaurants['-Kjky85dqED-yKs4-jBd'].restaurant;
+            ////            
+            //                var k;
+            //                for (k = 0; k < parseInt(CurrRestaurants[RestCnt].Menu[MenuCnt].Rating); k++) {
+            //                    var spanfilled = document.createElement("span");
+            //                    var elem1 = document.createElement("img");
+            //                    elem1.src = "../images/starfilled.png";
+            //                    elem1.setAttribute("class", "img-responsive");
+            //                    spanfilled.appendChild(elem1);
+            //                    
+            //                    document.getElementById("stars").appendChild(spanfilled);
+            //                }
+            //
+            //                for (; k < 5; k++) {
+            //                    var spanempty = document.createElement("span");
+            //                    var elem2 = document.createElement("img");
+            //                    elem2.src = "../images/starempty.png";
+            //                    elem2.setAttribute("class", "img-responsive");
+            //                    spanempty.appendChild(elem2);
+            //                    
+            //                    document.getElementById("stars").appendChild(spanempty);
+            //}
+
+
+
+            MenuCnt++;
+            //                if(MenuCnt >= CurrRestaurants[RestCnt].Menu.length) {
+            //                    RestCnt++;
+            //                    MenuCnt = 0;
+            //                }
+
+        });
+
+
+        function change() {
+            firebase.database().ref('dishes').once('value').then(function (snapshot) {
+                var CurrRestaurants = snapshot.val();
+                console.log(children.length);
+                if (MenuCnt > children.length - 1) {
+                    document.getElementById("foodPic").src = "../images/nomore.png"
+                    document.getElementById("foodPic").alt = "No more";
+                    document.getElementById("foodName").innerHTML = "Currently no more dishes! :(";
+                    document.getElementById("restName").innerHTML = "";
+                    document.getElementById("stars").innerHTML = "";
+                    return;
+                }
+
+                var storageRef = storage.ref(CurrRestaurants[children[MenuCnt]].img_name);
+                storageRef.getDownloadURL().then(url => {
+                    document.getElementById("foodPic").setAttribute("src", url);
+                }).catch(error => {
+                    console.log(error.message);
+                });
+
+                document.getElementById("foodPic").alt = CurrRestaurants[children[MenuCnt]]["food-name"];
+                document.getElementById("foodName").innerHTML = CurrRestaurants[children[MenuCnt]]["food-name"];
+                document.getElementById("restName").innerHTML = CurrRestaurants[children[MenuCnt]].restaurant;
+
+                //                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
+                //                document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                //                document.getElementById("foodName").innerHTML=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
+                //                document.getElementById("restName").innerHTML=CurrRestaurants[RestCnt].Name;
+                //                
+                //                document.getElementById("stars").innerHTML="";
+                //                var k;
+                //                for (k = 0; k < parseInt(CurrRestaurants[RestCnt].Menu[MenuCnt].Rating); k++) {
+                //                    var spanfilled = document.createElement("span");
+                //                    var elem1 = document.createElement("img");
+                //                    elem1.src = "../images/starfilled.png";
+                //                    elem1.setAttribute("class", "img-responsive");
+                //                    spanfilled.appendChild(elem1);
+                //                    
+                //                    document.getElementById("stars").appendChild(spanfilled);
+                //                }
+                //
+                //                for (; k < 5; k++) {
+                //                    var spanempty = document.createElement("span");
+                //                    var elem2 = document.createElement("img");
+                //                    elem2.src = "../images/starempty.png";
+                //                    elem2.setAttribute("class", "img-responsive");
+                //                    spanempty.appendChild(elem2);
+                //                    
+                //                    document.getElementById("stars").appendChild(spanempty);
+                //                }
+
+                MenuCnt++;
+                //                console.log("CurrRestaurants: " + CurrRestaurants.length);
+                //                console.log("MenuCnt: " + MenuCnt);
+            });
+        }
+    </script>
 </head>
+
 
 <body>
 
-<div class="ui secondary pointing menu">
-  <a class="active item" href="./index.html">
+    <div class="ui secondary pointing menu">
+    <a class="item" href="./map.html">
     My favorites
   </a>
-  <a class="item" href="./food_finder.html">
+    <a class="active item" href="./index.html">
     Food finder
   </a>
-  <a class="item" href="./business_submission.html">
+    <a class="item" href="./business_submission.html">
     Business
   </a>
-  <div class="right menu">
-    <a class="ui item" href="./food_finder.html">
+    <div class="right menu">
+      <a class="ui item" href="./login.html">
       Logout
     </a>
+    </div>
   </div>
-</div>
 
-  <div id="map"></div>
-  <script type="text/javascript">
-    initMap();
-    showAllPlaces();
-  </script>
+    <!--<ul class="nav nav-pills" style="margin-bottom: 1%;">
+      <li role="presentation" ><a href="./index.html">My favorites</a></li>
+      <li role="presentation" class="active"><a href="./food_finder.html">Food finder</a></li>
+      <li role="presentation"><a href="./business_submission.html">Business</a></li>
+    </ul>-->
 
-  <div class="container">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-      <!-- Carousel items -->
-      <div class="carousel-inner" id="two">
 
-        <div class="item active">
-          <!-- Static Header -->
-          <div class="header-text hidden-xs">
-            <div class="col-md-12 text-center">
-              <br>
-              <br>
-              <h2>
-                <span>Welcome to <strong>Foody</strong></span>
-              </h2>
-              <br>
-              <h3>
-                <span>Navigate through your recommended dishes.</span>
-              </h3>
-              <br>
-              <br>
-              <br>
-              <br>
+
+    <!--<div class="card" style="width: 90%; text-align: center; ">-->
+
+    <div class="ui container">
+
+        <div class="ui fluid   centered card">
+            <div class="image">
+                <img id="foodPic">
             </div>
-          </div>
-          <script type="text/javascript">
-            addFood();
-          </script>
+            <div class="content">
+                <span class="right floated">
+                    Rating:
+                    <div class="ui rating" data-rating="3" data-max-rating="5" id="rating"></div>
+                </span>
+                <a class="header" id="foodName"></a>
+                <div class="meta">
+                    <span class="date" id="restName"></span>
+                </div>
+                <div class="description" id="descrip">
+                    A delicious dish.
+                </div>
+            </div>
+            <div class="extra content">
+                <!--<div class="ui four column grid">
+                    <div class="column">
+                        <button onclick="change()" class="circular ui icon basic toggle grey button">
+                        <i class="icon history"></i>
+                    </button>
+                    </div>
+                    <div class="column">
+                        <button onclick="change()" class="circular ui icon basic toggle red button">
+                        <i class="icon remove"></i>
+                    </button>
+                    </div>
+                    <div class="column">
+                        <button onclick="change()" class="right floated circular ui icon basic toggle green button">
+                        <i class="icon heart"></i>
+                    </button>
+                    </div>
+                    <div class="column">
+                        <button onclick="change()" class="right floated circular ui icon basic toggle blue button">
+                        <i class="icon star"></i>
+                    </button>
+                    </div>
+                </div>-->
+                <div class="ui one column centered grid">
+                    <div class="center aligned column">
+                        <button onclick="change()" class="circular ui icon basic large grey button">
+                        <i class="icon history"></i>
+                    </button>
+                    <button onclick="change()" class="circular ui icon basic large red button">
+                        <i class="icon remove"></i>
+                    </button>
+                    <button onclick="change()" class="circular ui icon basic large green button">
+                        <i class="icon heart"></i>
+                    </button>
+                    <button onclick="change()" class="circular ui icon basic large blue button">
+                        <i class="icon star"></i>
+                    </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-      </div>
-
-
-      <!-- Carousel nav -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
 
     </div>
 
-  </div>
+    <!--<div class="card-block">
+            <img id="foodPic" class="cardPic img-responsive" alt="Food Picture">
+            <h4 class="card-title" id="foodName"></h4>
+            <p class="card-text" id="restName"></p>-->
+    <!--
+            <img id="foodPic" class="cardPic img-responsive" src="../images/hamburger_medium.jpg" alt="Hamburger">
+            <h4 class="card-title" id="foodName">Hamburger</h4>
+-->
 
+    <!--
+            <div class="rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+-->
+
+    <!--<div class="rating" id="stars">
+            </div>
+
+            <button type="button" class="btn btn-danger" onclick="change()">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-success" onclick="change()">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </button>
+
+        </div>-->
+    <!--</div>-->
+
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

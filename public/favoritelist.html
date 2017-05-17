@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Foodie - Food Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="styling.css">
+
+    <script type="text/javascript">$(document).ready(function(){$(".rating").rating();});</script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
+            authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
+            databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
+            projectId: "foody-cogs121-1492804395262",
+            storageBucket: "foody-cogs121-1492804395262.appspot.com",
+            messagingSenderId: "701518273477"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script>
+        var RestCnt = 0;
+        var MenuCnt = 0;
+        var children = [];
+        var storage = firebase.storage();
+        var dishRef = firebase.database().ref('dishes')
+        dishRef.once('value', function (snapshot) {
+            snapshot.forEach(function (childSnapshot) {
+                var childKey = childSnapshot.key;
+                var childData = childSnapshot.val();
+                children.push(childKey);
+            });
+        });
+
+        console.log(children);
+
+        var restaurants = firebase.database().ref('dishes').once('value').then(function (snapshot) {
+            var CurrRestaurants = snapshot.val();
+            var i;
+            var j;
+
+            var storageRef = storage.ref(CurrRestaurants[children[MenuCnt]].img_name);
+            storageRef.getDownloadURL().then(url => {
+                document.getElementById("foodPic").setAttribute("src", url);
+            }).catch(error => {
+                console.log(error.message);
+            });
+
+            document.getElementById("foodPic").alt = CurrRestaurants[children[MenuCnt]]["food-name"];
+            document.getElementById("foodName").innerHTML = CurrRestaurants[children[MenuCnt]]["food-name"];
+            document.getElementById("restName").innerHTML = CurrRestaurants[children[MenuCnt]].restaurant;
+
+            MenuCnt++;
+
+        });
+
+
+        function change() {
+            firebase.database().ref('dishes').once('value').then(function (snapshot) {
+                var CurrRestaurants = snapshot.val();
+                console.log(children.length);
+                if (MenuCnt > children.length - 1) {
+                    document.getElementById("foodPic").src = "../images/nomore.png"
+                    document.getElementById("foodPic").alt = "No more";
+                    document.getElementById("foodName").innerHTML = "Currently no more dishes! :(";
+                    document.getElementById("restName").innerHTML = "";
+                    document.getElementById("stars").innerHTML = "";
+                    return;
+                }
+
+                var storageRef = storage.ref(CurrRestaurants[children[MenuCnt]].img_name);
+                storageRef.getDownloadURL().then(url => {
+                    document.getElementById("foodPic").setAttribute("src", url);
+                }).catch(error => {
+                    console.log(error.message);
+                });
+
+                document.getElementById("foodPic").alt = CurrRestaurants[children[MenuCnt]]["food-name"];
+                document.getElementById("foodName").innerHTML = CurrRestaurants[children[MenuCnt]]["food-name"];
+                document.getElementById("restName").innerHTML = CurrRestaurants[children[MenuCnt]].restaurant;
+                MenuCnt++;
+               console.log("MenuCnt: " + MenuCnt);
+            });
+        }
+    </script>
+</head>
+
+
+<body>
+
+    <div class="ui secondary pointing menu">
+    <a class="active item" href="./map.html">
+    My favorites
+  </a>
+    <a class="item" href="./index.html">
+    Food finder
+  </a>
+    <a class="item" href="./business_submission.html">
+    Business
+  </a>
+    <div class="right menu">
+      <a class="ui item" href="./login.html">
+      Logout
+    </a>
+    </div>
+  </div>
+
+    <div class="ui container">
+        
+        <h1>All Time Favorites:</h1>
+
+        <div class="card listCard">
+          <div class="card-header">
+            Burgr
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Hamburger</h4>
+            <p class="card-text">100% angus beef patty sandwiched in between two brioche buns. Cheese available upon request.</p>
+            <a href="#" class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+        
+        <div class="card listCard">
+          <div class="card-header">
+            Burgr
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Milk Tea</h4>
+            <p class="card-text">A refreshing drink made with the perfect ratio of milk and tea. Boba can be added upon request.</p>
+            <a href="#" class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+        
+        <div class="card listCard">
+          <div class="card-header">
+            ChinaWay
+          </div>
+          <div class="card-block">
+            <h4 class="card-title">Hamburger</h4>
+            <p class="card-text">100% angus beef patty sandwiched in between two brioche buns. Cheese available upon request.</p>
+            <a href="#" class="btn btn-primary">Directions</a>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
