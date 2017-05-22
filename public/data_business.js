@@ -97,8 +97,12 @@ function autocomplete(){
 
 //   xhr.send();
 // }
-
-$(document).on("click", "#submit", function(){
+// var form = document.getElementById("food-submission"); 
+// function handleForm(event) { 
+//   event.preventDefault(); } 
+// form.addEventListener('submit', handleForm);  
+// $(document).on("click", "#submit", function(){
+ function clickSubmit(){ 
   var $form = $(this);
   console.log("Submit to Firebase");
   
@@ -150,13 +154,13 @@ $(document).on("click", "#submit", function(){
         alert("Data no go");
       }
     });
-  event.preventDefault();
-    //send the new data to Firebase
+   //send the new data to Firebase
   	// ref.set(data, function(err){
    //    if(err){
    //      alert("Data no go");
    //    }
    //  });
-
+  return false;
   //  console.log(json);
-});
+};
+

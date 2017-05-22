@@ -150,13 +150,14 @@ function pickPlace(param) {
 }
 function showAllPlaces(){
   clearOverlays();
+  var info = new google.maps.InfoWindow()
   var dishRef = firebase.database().ref('dishes')
   dishRef.once('value', function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     var childKey = childSnapshot.key;
     var childData = childSnapshot.val();
     // for (var i in childData){
-        marker = new google.maps.Marker({
+      var marker = new google.maps.Marker({
         map: map,
         title: childData["restaurant"],
         animation: google.maps.Animation.DROP,
@@ -164,15 +165,26 @@ function showAllPlaces(){
       });
     console.log(childData["place_id"])
   imageRef = firebase.storage().ref(childData["img_name"])
-
+ 
 // Get the download URL
-imageRef.getDownloadURL().then(function(url) {
-    image = "<img src=".concat(url).concat(" style='width:200px;height:100px;'></img>");
-    google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent('<div><strong>' + childData["food-name"] + '</strong><br>'+childData["restaurant"]+'<br>'
-      +image+'</div>');
-   infowindow.open(map,this);
-  })
+  imageRef.getDownloadURL().then(function(url) {
+      image = "<img src=".concat(url).concat(" style='width:200px;height:100px;'></img>");
+      console.log(image) 
+      var str = "<div><strong>" + childData["food-name"] + "</strong><br>"+childData["restaurant"]+"<br>"
+          +image+"</div>";
+      // info.setContent(str);
+      marker.info = new google.maps.InfoWindow({
+        content: str
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        marker.info.open(map, marker);
+
+      })
+      // marker.addListener('click', function() {
+      //     infowindow.open(map, marker);
+      //   });
+
+
 }).catch(function(error) {
 
   // A full list of error codes is available at
