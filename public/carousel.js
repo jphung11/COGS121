@@ -1,7 +1,7 @@
   var config = {
     apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
     authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
-    databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
+    databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com/",
     projectId: "foody-cogs121-1492804395262",
     storageBucket: "foody-cogs121-1492804395262.appspot.com",
     messagingSenderId: "701518273477"
@@ -9,10 +9,13 @@
   firebase.initializeApp(config);
 
   function addFood(){
-    var dishRef = firebase.database().ref('dishes')
-    dishRef.once('value', function(snapshot) {
+    var dishRef = firebase.database().ref('dishes').orderByKey();
+    dishRef.on('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
+        var key = childSnapshot.key;
         var childData = childSnapshot.val();
+
+        console.log("child snapshot key: " + key);
 
         imageRef = firebase.storage().ref(childData["img_name"])
 
@@ -27,7 +30,7 @@
           d.className = "item";
           d.innerHTML = content;
 
-          console.log(d);
+          console.log(url);
 
 /*
           var c = document.createElement("DIV");

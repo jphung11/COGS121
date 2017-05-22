@@ -43,3 +43,21 @@ body {
 .listCard {
     margin-bottom: 10px;
 }
+
+.myCarousel {
+  height: 260px !important;
+  width: auto;
+  overflow: hidden;
+  position: fixed;
+  top: 250px;
+}
+
+.desc {
+  font-size: 1.90em;
+  line-height: 2em;
+  height: 3em;
+  display: table;
+  vertical-align: middle;
+  margin:auto;
+  text-align: center;
+}
