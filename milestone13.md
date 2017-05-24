@@ -8,6 +8,9 @@
 width of the page, I put it inside of a container so that it takes up a fixed amount of width on the page. I also helped with the redesign of the My Favorites section that
 is below the map. I'm working on creating a tab menu for the section, I just need to solve a javascript bug before its ready.</p>
 
+<h5>Tae Hee Kim:</h5>
+<p>For this milestone, I fixed a ui bug on the map page in which the first active carousel text slide wouldn't show up and the carousel slides continuously got positioned strangely. I was able to reposition the text slide and the carousel so that it wouldn't bug out and disappear if viewed from a mobile device. (Previously the first slide wasviewable with no problems on a pc. On mobile devices, the first slide was bugged out.)
+
 <h1>Screenshots</h1>
 <img src="https://raw.githubusercontent.com/jphung11/COGS121/master/images/milestone13_pic.png" width="90%"></img> 
 <p>The favorites food card grid shown above is a feature that the team is toying with. This feature allows or will allow users to click on the cards and have the pin associated with it show up on the map. In addition, this will help users see where their favorited food is on the map relative to them if they crave it. By clicking on it, the user will be filtering out other pins for a clearer view.</p>
