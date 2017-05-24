@@ -14,7 +14,7 @@
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
 <script type="text/javascript" src="maps_interaction.js"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
 
 <script type="text/javascript" src="carousel.js"></script>
@@ -27,6 +27,12 @@
 
 <head>
   <title>Foodie</title>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.menu .item').tab();
+    });
+  </script>
   <!--<ul class="nav nav-pills">
     <li role="presentation" class="active"><a href="#">My favorites</a></li>
     <li role="presentation"><a href="./food_finder.html">Food Finder</a></li>
@@ -44,7 +50,7 @@
 
 <body>
 
-<div class="ui secondary pointing menu">
+  <div class="ui secondary pointing menu">
     <a class="active item" href="./map.html">
     My favorites
   </a>
@@ -61,112 +67,130 @@
     </div>
   </div>
 
-  <div id="map"></div>
-  <script type="text/javascript">
-    initMap();
-    showAllPlaces();
-  </script>
+  <div class="ui container">
 
-  <div class="container">
+    <div id="map"></div>
+    <script type="text/javascript">
+      initMap();
+      showAllPlaces();
+    </script>
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
       <!-- Carousel items -->
       <div class="carousel-inner" id="two">
 
         <div class="item active">
           <!-- Static Header -->
-              <p class="desc">Welcome to Foody</p>
-              <p class="desc">Navigate through your recommended dishes.</p>
-              
+          <p class="desc">Welcome to Foody</p>
+          <p class="desc">Navigate through your recommended dishes.</p>
+
         </div>
-          <script type="text/javascript">
-            addFood();
-          </script>
+        <script type="text/javascript">
+          addFood();
+        </script>
       </div>
 
 
       <!-- Carousel nav -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left icon-prev"></span>
-    <span class="sr-only">Previous</span>
-  </a>
+        <span class="glyphicon glyphicon-chevron-left icon-prev"></span>
+        <span class="sr-only">Previous</span>
+      </a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right icon-next"></span>
-    <span class="sr-only">Next</span>
-  </a>
+        <span class="glyphicon glyphicon-chevron-right icon-next"></span>
+        <span class="sr-only">Next</span>
+      </a>
 
     </div>
-      
-<h3>My favorites:</h3>
-<div class="ui five column grid" style="margin-top:30px;">
-    
-  <div class="column">
-    <div class="ui fluid card fave">
-      <div class="image">
-        <img src="../images/hamburger.jpg">
+
+    <div class="ui segment">
+
+      <!--<div class="ui top attached tabular menu">
+        <a class="item active" data-tab="first">My Favorites</a>
+        <a class="item" data-tab="second">My Likes</a>
       </div>
-      <div class="content">
-        <a class="header">Hamburger</a>
+
+      <div class="ui bottom attached tab segment active" data-tab="first">
+        first
       </div>
+      <div class="ui bottom attached tab segment" data-tab="second">
+        second
+      </div>  -->
+
+      <h3 class="ui header">My Favorites:</h3>
+
+      <div class="ui five column grid" style="margin-top:30px;">
+
+        <div class="column">
+          <div class="ui fluid card fave">
+            <div class="image">
+              <img src="../images/hamburger.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Hamburger</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui fluid card fave">
+            <div class="image">
+              <img src="../images/milktea.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Milk Tea</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui fluid card fave">
+            <div class="image">
+              <img src="../images/orangechicken.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Orange Chicken</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui fluid card fave">
+            <div class="image">
+              <img src="../images/pasta.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Pasta</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui fluid card fave">
+            <div class="image">
+              <img src="../images/pizza.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Pizza</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="ui fluid card fave">
+            <div class="image">
+              <img src="../images/orangechicken.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Orange Chicken</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
-  </div>
-    
-  <div class="column">
-    <div class="ui fluid card fave">
-      <div class="image">
-        <img src="../images/milktea.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Milk Tea</a>
-      </div>
-    </div>
-  </div>
-    
-  <div class="column">
-    <div class="ui fluid card fave">
-      <div class="image">
-        <img src="../images/orangechicken.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Orange Chicken</a>
-      </div>
-    </div>
-  </div>
-    
-  <div class="column">
-    <div class="ui fluid card fave">
-      <div class="image">
-        <img src="../images/pasta.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Pasta</a>
-      </div>
-    </div>
-  </div>
-    
-  <div class="column">
-    <div class="ui fluid card fave">
-      <div class="image">
-        <img src="../images/pizza.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Pizza</a>
-      </div>
-    </div>
-  </div>
-    
-  <div class="column">
-    <div class="ui fluid card fave">
-      <div class="image">
-        <img src="../images/orangechicken.jpg">
-      </div>
-      <div class="content">
-        <a class="header">Orange Chicken</a>
-      </div>
-    </div>
-  </div>
-    
-</div>
-<!--
+    <!--
         <div class="ui cards schedule_cards">
         <div class="raised card" id="{{id}}">
             <div class="content">
