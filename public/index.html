@@ -14,7 +14,7 @@
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="carousel.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -40,7 +40,7 @@
     <script type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="styling.css">
 
-    <script type="text/javascript">$(document).ready(function(){ $('.ui.rating').rating();});</script>
+<!--    <script type="text/javascript">$(document).ready(function(){ $('.ui.rating').rating(); console.log("did go in rating function");});</script>-->
 
     <script>
         // Initialize Firebase
@@ -53,6 +53,7 @@
             messagingSenderId: "701518273477"
         };
         firebase.initializeApp(config);
+        
     </script>
 
     <script>
@@ -136,18 +137,16 @@
             //                    document.getElementById("stars").appendChild(spanempty);
             //}
             
-//            var k;
-//            for (k = 0; k < 5); k++) {
-//                var spanfilled = document.createElement("span");
-//                var elem1 = document.createElement("img");
-//                elem1.src = "../images/starfilled.png";
-//                elem1.setAttribute("class", "img-responsive");
-//                spanfilled.appendChild(elem1);
-//                                
-//                document.getElementById("stars").appendChild(spanfilled);
-//            }
-
-
+            var k;
+            for (k = 0; k < 5; k++) {
+                var spanfilled = document.createElement("span");
+                var elem1 = document.createElement("img");
+                elem1.src = "../images/starfilled.png";
+                elem1.setAttribute("class", "img-responsive");
+                spanfilled.appendChild(elem1);
+                                
+                document.getElementById("stars").appendChild(spanfilled);
+            }
 
             MenuCnt++;
             //                if(MenuCnt >= CurrRestaurants[RestCnt].Menu.length) {
@@ -181,6 +180,7 @@
                 document.getElementById("foodPic").alt = CurrRestaurants[children[MenuCnt]]["food-name"];
                 document.getElementById("foodName").innerHTML = CurrRestaurants[children[MenuCnt]]["food-name"];
                 document.getElementById("restName").innerHTML = CurrRestaurants[children[MenuCnt]].restaurant;
+                document.getElementById("stars").innerHTML = "<label>Rating:</label>";
 
                 //                document.getElementById("foodPic").src=CurrRestaurants[RestCnt].Menu[MenuCnt].Picture;
                 //                document.getElementById("foodPic").alt=CurrRestaurants[RestCnt].Menu[MenuCnt].Name;
@@ -209,17 +209,18 @@
                 //                    document.getElementById("stars").appendChild(spanempty);
                 //                }
 
+                var k;
+                for (k = 0; k < 4; k++) {
+                    var spanfilled = document.createElement("span");
+                    var elem1 = document.createElement("img");
+                    elem1.src = "../images/starfilled.png";
+                    elem1.setAttribute("class", "img-responsive");
+                    spanfilled.appendChild(elem1);
+                                
+                    document.getElementById("stars").appendChild(spanfilled);
+                }
                 
-//                var k;
-//                for (k = 0; k < 5); k++) {
-//                    var spanfilled = document.createElement("span");
-//                    var elem1 = document.createElement("img");
-//                    elem1.src = "../images/starfilled.png";
-//                    elem1.setAttribute("class", "img-responsive");
-//                    spanfilled.appendChild(elem1);
-//                                
-//                    document.getElementById("stars").appendChild(spanfilled);
-//                }
+
                 
                 MenuCnt++;
                 //                console.log("CurrRestaurants: " + CurrRestaurants.length);
@@ -267,13 +268,34 @@
                 <img id="foodPic">
             </div>
             <div class="content">
+<!--
+                <div class="rating" id="stars">
+                    <span class="right floated">
+                        <label>Rating:</label>
+                        <img src="../images/starfilled.png" width="40%">
+                        <img src="../images/starfilled.png" width="40%">
+                        <img src="../images/starfilled.png" width="40%">
+                    </span>
+                </div>
+-->
+<!--
                 <span class="right floated">
                     Rating:
+                    
                     <div class="ui rating" data-rating="3" data-max-rating="5" id="rating"></div>
                 </span>
+-->
                 <a class="header" id="foodName"></a>
                 <div class="meta">
                     <span class="date" id="restName"></span>
+                </div>
+                <div class="rating" id="stars">
+                        <label style="margin-right:1%">Rating:</label>
+<!--
+                        <img class="img-responsive" src="../images/starfilled.png" width="3%">
+                        <img class="img-responsive" src="../images/starfilled.png" width="3%">
+                        <img class="img-responsive" src="../images/starfilled.png" width="3%">
+-->
                 </div>
                 <div class="description" id="descrip">
                     A delicious dish.
