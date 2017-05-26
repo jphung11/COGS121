@@ -4,4 +4,5 @@
   <li>Connect the two pages</li>
 </ul>
 
+REMAINING TASKS FOR WEEK 8-9:
 https://docs.google.com/spreadsheets/d/1IP3VNW6_esl806WFccfKyyUF0-vvbVPS4qH1s2qq0vE/edit?usp=sharing
