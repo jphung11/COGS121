@@ -74,3 +74,18 @@ body {
   margin:auto;
   text-align: center;
 }
+
+/*
+@media (max-width:767px) {
+    .card > div img {
+        width: 100%;
+    }
+}
+
+@media (min-width:900px) {
+    .card > div img{
+        text-align: center;
+        width: 70%;
+    }
+}
+*/

@@ -137,8 +137,9 @@
             //                    document.getElementById("stars").appendChild(spanempty);
             //}
             
+            rating = parseInt(CurrRestaurants[children[MenuCnt]]["rating"]);
             var k;
-            for (k = 0; k < 5; k++) {
+            for (k = 0; k < rating; k++) {
                 var spanfilled = document.createElement("span");
                 var elem1 = document.createElement("img");
                 elem1.src = "../images/starfilled.png";
@@ -208,9 +209,9 @@
                 //                    
                 //                    document.getElementById("stars").appendChild(spanempty);
                 //                }
-
+                rating = parseInt(CurrRestaurants[children[MenuCnt]]["rating"]);
                 var k;
-                for (k = 0; k < 4; k++) {
+                for (k = 0; k < rating; k++) {
                     var spanfilled = document.createElement("span");
                     var elem1 = document.createElement("img");
                     elem1.src = "../images/starfilled.png";
@@ -263,9 +264,9 @@
 
     <div class="ui container">
 
-        <div class="ui fluid card">
+        <div class="ui card" style="align-content: center; margin: 0 auto;">
             <div class="image">
-                <img id="foodPic">
+                <img class="img-responsive" id="foodPic">
             </div>
             <div class="content">
 <!--
