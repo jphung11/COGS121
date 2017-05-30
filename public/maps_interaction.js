@@ -178,7 +178,7 @@ function showAllPlaces() {
 
       // Get the download URL
       imageRef.getDownloadURL().then(function (url) {
-        image = "<img src=".concat(url).concat(" style='width:200px;height:100px;'></img>");
+        image = "<img src=".concat(url).concat(" style='width:150px;height:150px;'></img>");
         console.log(image)
         var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
           image + "</div>";

@@ -7,6 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+        <script type="text/javascript" src="login.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
     <style type="text/css">
@@ -26,39 +30,18 @@
         max-width: 450px;
     }
     </style>
-    <script>
-    $(document)
-        .ready(function() {
-            $('.ui.form')
-                .form({
-                    fields: {
-                        email: {
-                            identifier: 'email',
-                            rules: [{
-                                type: 'empty',
-                                prompt: 'Please enter your e-mail'
-                            }, {
-                                type: 'email',
-                                prompt: 'Please enter a valid e-mail'
-                            }]
-                        },
-                        password: {
-                            identifier: 'password',
-                            rules: [{
-                                type: 'empty',
-                                prompt: 'Please enter your password'
-                            }, {
-                                type: 'length[6]',
-                                prompt: 'Your password must be at least 6 characters'
-                            }]
-                        }
-                    }
-                });
-        });
-    </script>
+    
 </head>
 
 <body>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1867688066890355";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <div class="ui middle aligned center aligned grid">
     <div class="column">
         <h2 class="ui blue image header">
@@ -66,32 +49,16 @@
         Log-in to your account:
       </div>
     </h2>
-        <form class="ui large form" id="sign_in_form" method="post" action="/home">
-            <div class="ui stacked segment">
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="user icon"></i>
-                        <input type="text" name="email" placeholder="E-mail address">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="lock icon"></i>
-                        <input type="password" name="password" placeholder="Password">
-                    </div>
-                </div>
-                <a href="index.html">
-                    <div class="ui fluid large blue submit button">Login</div>
-                </a>
-            </div>
-            <div class="ui error message"></div>
-        </form>
-        <div class="ui message">
-            New to us? <a href="./signup.html">Sign Up</a>
-        </div>
+               <!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                <a href="index.html"> -->
+                    <button type="button" class="ui submit button" onclick="login()">Login</div>
+
+<!--                     <button class="ui fluid large blue submit button" onclick="login">Login</div>
+ -->            </div>
+        
     </div>
 </div>
-
+  
 </body>
 
 </html>

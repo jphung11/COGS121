@@ -65,21 +65,21 @@
     <h1 class="ui header">Food Submission Form</h1>
     </br>
 
-    <form id="food-submission" class="ui form">
+    <form id="food-submission" class="ui form" onsubmit="return false">
       <div class="field">
         <label>Your Name</label>
-        <input type="text" name="first-name" id="user" placeholder="Your Name">
+        <input type="text"  id="user" placeholder="Your Name">
       </div>
       <div class="field">
         <label>Restaurant</label>
-        <input type="text" name="last-name" id="restaurant" placeholder="Restaurant">
+        <input type="text"  id="restaurant" placeholder="Restaurant">
         <script>
           autocomplete();
         </script>
       </div>
       <div class="field">
         <label>Food Name</label>
-        <input type="text" name="last-name" id="food-name" placeholder="Food Name">
+        <input type="text" id="foodname" placeholder="Food Name">
       </div>
       <div class="field">
         <label for="food_image">Food image</label>
@@ -90,40 +90,45 @@
         <label>Food Description</label>
         <textarea rows="2" id="description"></textarea>
       </div>
+      <div class="ui fluid multiple search selection dropdown">
+        <input type="hidden" id="tags">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Tags</div>
+        <div class="menu">
+        <div class="item" data-value="thai"><i class="th flag"></i>Thai</div>
+        <div class="item" data-value="japanese"><i class="jp flag"></i>Japanese</div>
+        <div class="item" data-value="korean"><i class="kr flag"></i>Korean</div>
+        <div class="item" data-value="vietnamese"><i class="vn flag"></i>Vietnamse</div>
+        <div class="item" data-value="american"><i class="us flag"></i>American</div>
+        <div class="item" data-value="french"><i class="fr flag"></i>French</div>
+        <div class="item" data-value="italian"><i class="it flag"></i>Italian</div>
+        <div class="item" data-value="german"><i class="de flag"></i>German</div>
+        <div class="item" data-value="chinese"><i class="cn flag"></i>Chinese</div>
+        <div class="item" data-value="bbq">BBQ</div>
+        <div class="item" data-value="sandwich">Sandwich</div>
+        <div class="item" data-value="fastfood">Fast food</div>
+        <div class="item" data-value="asian">Asian</div>
+        <div class="item" data-value="hotpot">Hot pot</div>
+        <div class="item" data-value="snacks">Snacks</div>
+        <div class="item" data-value="dessert">Dessert</div>
+        <div class="item" data-value="mediterranean">Mediterranean</div>
+
+
+
+        <!-- <button class="ui fluid primary button" id="submit" onclick="clickSubmit()">Submit</button> -->
+        </div>
+
+      </div>
+        <button type="button" class="ui submit button" onclick="clickSubmit()">Submit</div>
+
       </form>
 
       </br>
 
-      <button class="ui fluid primary button" id="submit" onclick="clickSubmit()">Submit</button>
+      <!-- <button class="ui fluid primary button" id="submit" onclick="clickSubmit()">Submit</button> -->
 
   </div>
         
-
-
-  <!--<form id="food-submission" class="form-inline">
-      <label class="sr-only" for="inlineFormInput">Name</label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="user" placeholder="Your name">
-      </br>
-      <label class="sr-only" for="inlineFormInput">Restaurant</label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="restaurant" placeholder="Restaurant">
-      <script>
-        autocomplete();
-      </script>
-      </br>
-      <label class="sr-only" for="inlineFormInput">Food</label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="food-name" placeholder="Food name">
-      </br>
-      <label for="food_image">Food image</label>
-      <form action="upload.php" method="post" enctype="multipart/form-data">
-      <input type="file" name="fileToUpload" id="food_image">
-      </form>
-      <div class="form-group">
-        <label for="exampleTextarea">Description</label>
-        <textarea class="form-control" id="description" rows="3"></textarea>
-      </div>
-      <button id="submit" type="submit" class="btn btn-primary" onclick="window.location.href='./index.html'">Submit</button>
-    </form>-->
-
 
 </body>
 

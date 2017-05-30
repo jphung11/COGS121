@@ -1,5 +1,5 @@
 body {
-	margin-left:20 px;
+	margin-left:0 px;
 	padding:0;
 }
 
@@ -51,7 +51,20 @@ body {
   position: fixed;
   top: 250px;
 }
-
+#wrap {
+   width:1000px;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:400px;
+}
+#right_col {
+   float:left;
+   width:400px;
+   margin-left: 30px;
+}
+</style>
 .desc {
   font-size: 1.90em;
   line-height: 2em;

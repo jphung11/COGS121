@@ -34,8 +34,20 @@ String.prototype.format = function () {
         });
 };
 
-
- 
+$( document ).ready(function() { 
+  $('.ui.dropdown')
+    .dropdown();
+  $('.ui.form').form({
+    fields: {
+      user     : 'empty',
+      foodname : ['minLength[6]', 'empty'],
+      restaurant : ['minLength[6]', 'empty'],
+      food_image : ['minLength[3]', 'empty'],
+      description    : ['minLength[10]', 'empty'],
+      tags    : ['minCount[1]', 'empty']
+    }
+  });
+});
 //Entire Form (handler)
 function autocomplete(){
   autocomplete = new google.maps.places.Autocomplete(
@@ -116,10 +128,13 @@ function autocomplete(){
   var restaurant = $('#restaurant').val();
   console.log(restaurant);
   
-  var food_name= $('#food-name').val();
+  var food_name= $('#foodname').val();
   console.log(food_name);
   var description= $('#description').val();
   console.log(description);
+  var tags_str= $('#tags').val();
+  var tags = tags_str.split(',')
+  console.log(tags);
   var imgRef   = storageRef.child( 'image');
   place_id = place["place_id"]
   // request_URL = 'https://maps.googleapis.com/maps/api/place/details/json?placeid={0}&key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q'.format(place_id)
@@ -137,7 +152,6 @@ function autocomplete(){
   var selectedFile = document.getElementById('food_image').files[0];
 
   imageRef.put(selectedFile)
-
   console.log("haha");
    var post_restaurant= {
     "description": description,
@@ -146,8 +160,10 @@ function autocomplete(){
     "longitude":lng,
     "latitude": ltd,
     "place_id": place_id,
-    "img_name": imgName
+    "img_name": imgName,
+    "tags": tags
   }
+ 
   var newPostRef = ref.push();
   newPostRef.set(post_restaurant, function(err){
       if(err){
@@ -160,7 +176,13 @@ function autocomplete(){
    //      alert("Data no go");
    //    }
    //  });
-  return false;
+  // alert("Successful submission. Thanks for your info!");
+  setTimeout(function () {
+        alert("Successful submission. Thanks for your info!");
+        location.reload();
+
+    }, 3000);
+
   //  console.log(json);
 };
 
