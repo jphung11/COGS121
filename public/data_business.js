@@ -42,6 +42,7 @@ $( document ).ready(function() {
       user     : 'empty',
       foodname : ['minLength[6]', 'empty'],
       restaurant : ['minLength[6]', 'empty'],
+      price: ['decimal','empty'],
       food_image : ['minLength[3]', 'empty'],
       description    : ['minLength[10]', 'empty'],
       tags    : ['minCount[1]', 'empty']
@@ -130,6 +131,8 @@ function autocomplete(){
   
   var food_name= $('#foodname').val();
   console.log(food_name);
+  var price_val= $('#price').val();
+  console.log(price_val);
   var description= $('#description').val();
   console.log(description);
   var tags_str= $('#tags').val();
@@ -157,11 +160,13 @@ function autocomplete(){
     "description": description,
     "food-name": food_name,
     "restaurant": restaurant,
+    "price": price_val,
     "longitude":lng,
     "latitude": ltd,
     "place_id": place_id,
     "img_name": imgName,
-    "tags": tags
+    "tags": tags,
+    "rating": 5
   }
  
   var newPostRef = ref.push();
