@@ -75,6 +75,10 @@ body {
   text-align: center;
 }
 
+.fave img {
+    height: 30px;
+}
+
 /*
 @media (max-width:767px) {
     .card > div img {
