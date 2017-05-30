@@ -27,7 +27,7 @@ function checkUser(){
 	  name = user.displayName;
 	  console.log(name)
 
-	  document.getElementById('login-center').innerHTML = "<h2 class='ui blue image header'><p> Hi, "+name + "!</p>";
+	  document.getElementById('login-center').innerHTML = "<h2 class='ui blue image header'><p> Hi, "+name + "!</p><br><button class='positive ui button'> <a href='https://foody-cogs121-1492804395262.firebaseapp.com/'>Go back to main page</a></button>";
 
 	} else {
 	  // No user is signed in.
