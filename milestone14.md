@@ -8,3 +8,12 @@
 
 <h5>Jennifer Phung:</h5>
 <p>For this milestone, I removed the back button from the Food Finder because it was unnecessary for what we want to do with out app. In addition, I fixed the UI/UX for the Food Finder card, making it smaller and centered rather than expand based on the image size. I also made all the cards on the favorite grid list on the map page the same size in an attempt to make the UI look better with a more uniform size for the cards. In addition, I fixed the rating on the Food Finder page. Now, the cards on the Food Finder will display the ratings from the firebase. I also added a new tab and page called "Help" to provide documentation for the user if they were a first time user and needed to understand what everything was.</p>
+
+<h5>Trung Do:</h5>
+<p>For this milestone, I achieved:</p>
+<p>- Fully implemented log-in feature. Using Google Plus. </p>
+<p>- Rebuilt database model so now each user has their own access and database within the app. </p>
+<p>- Refactor code on index.html (foodfinder page) and add each dish user likes/ dislikes to database. </p>
+<p>- Adding tags and price to each dish when user submit. This will be later used as a reference to implement recommendations </p>
+<p>- Adding recommendation and query data to match user's interests. </p>
+<p>- Change the maps icon to match with user interaction (like = hearth, superlike = stars, and don't show anything for dislike) </p>
