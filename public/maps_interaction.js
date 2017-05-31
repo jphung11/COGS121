@@ -209,6 +209,8 @@ function createMarkerForUser(){
       var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
         image + "</div>";
       // var link = "<form><input type=button value = 'Directions' onClick='self.location = 'https://www.google.com/maps?saddr=My+Location&daddr=" + childData[restaurant] + "''></form>"
+       // image + "<a href='https://www.google.com/maps?saddr=My+Location&daddr=" + childData["restaurant"] + "'>Directions</a>" + "</div>";
+
       // info.setContent(str);
       var bigImage =  "<img src=".concat(url).concat("></img>");
       console.log(bigImage);
@@ -233,6 +235,9 @@ function createMarkerForUser(){
         // + link
       
       });
+      google.maps.event.addListener(marker, 'click', function () {
+        content: str
+      });     
       google.maps.event.addListener(marker, 'click', function () {
         marker.info.open(map, marker);
 
