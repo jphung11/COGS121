@@ -1,7 +1,7 @@
 <h1>Team Progress</h1>
 
 <h5>Aaron Hurtado:</h5>
-<p></p>
+<p>For this milestone I helped fix some UI and programming bugs in our code. For instance, our business submission page had a bug in the nav bar and submit button. I also worked on improving our food finder implementation of the food cards. For our map page I worked on creating a tabbed menu for showing a My Favorites section and a My Likes section but was unable to get it working.</p>
 
 <h5>Tae Hee Kim:</h5>
 <p>for this milestone, I was able to link the directions to all the food that people have liked/favorited from the food finder page. Also, I added a handful of dishes to the database for a larger pool.</p>
