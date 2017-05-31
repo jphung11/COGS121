@@ -211,7 +211,7 @@ function createMarkerForUser(){
 
       // info.setContent(str);
       marker.info = new google.maps.InfoWindow({
-        content: str + link
+        content: str
       })
 ;      google.maps.event.addListener(marker, 'click', function () {
         marker.info.open(map, marker);
