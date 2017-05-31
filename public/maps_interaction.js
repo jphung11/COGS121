@@ -207,13 +207,13 @@ function createMarkerForUser(){
       image = "<img src=".concat(url).concat(" style='width:150px;height:150px;'></img>");
       console.log(image)
       var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
-        image + "</div>";
-      var link = "<form><input type=button value = 'Directions' onClick='self.location = 'https://www.google.com/maps?saddr=My+Location&daddr=" + childData[restaurant] + "''></form>"
+        image + "<a href='https://www.google.com/maps?saddr=My+Location&daddr=" + childData["restaurant"] + "'>Directions</a>" + "</div>";
+
       // info.setContent(str);
       marker.info = new google.maps.InfoWindow({
-        content: str + link
-      });
-      google.maps.event.addListener(marker, 'click', function () {
+        content: str
+      })
+;      google.maps.event.addListener(marker, 'click', function () {
         marker.info.open(map, marker);
 
       })
