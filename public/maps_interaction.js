@@ -208,7 +208,7 @@ function createMarkerForUser(){
       console.log(image)
       var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
         image + "<br><a href='https://www.google.com/maps?saddr=My+Location&daddr=" + childData["restaurant"] + "'>Directions</a>" + "</div>";
-        //image + "</div>";
+
       // var link = "<form><input type=button value = 'Directions' onClick='self.location = 'https://www.google.com/maps?saddr=My+Location&daddr=" + childData[restaurant] + "''></form>"
        // image + "<a href='https://www.google.com/maps?saddr=My+Location&daddr=" + childData["restaurant"] + "'>Directions</a>" + "</div>";
 
