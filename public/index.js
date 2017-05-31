@@ -94,6 +94,8 @@ function change() {
                                 document.getElementById("foodPic").alt = CurrRestaurants[children[MenuCnt]]["food-name"];
                                 document.getElementById("foodName").innerHTML = CurrRestaurants[children[MenuCnt]]["food-name"];
                                 document.getElementById("restName").innerHTML = CurrRestaurants[children[MenuCnt]].restaurant;
+                                
+                                document.getElementById("descrip").innerHTML = CurrRestaurants[children[MenuCnt]].description;
                                 document.getElementById("stars").innerHTML = "<label>Rating:</label>";
 
                     
