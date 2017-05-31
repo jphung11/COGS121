@@ -19,14 +19,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="authentication.js"></script>
-<script type="text/javascript" src="index.js"></script>
 
 <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&callback=initMap">
     </script> -->
 
 <head>
-    <title>Foodie - Food Finder</title>
+    <title>Foodie - Help</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://code.jquery.com/jquery.min.js"></script>
@@ -56,13 +55,13 @@
     <a class="item" href="./map.html">
     My favorites
   </a>
-    <a class="active item" href="./index.html">
+    <a class="item" href="./index.html">
     Food finder
   </a>
     <a class="item" href="./business_submission.html">
     Business
   </a>
-    <a class="item" href="./help.html">
+    <a class="active item" href="./help.html">
     Help
   </a>
     <div class="right menu" id="login-corner">
@@ -70,54 +69,31 @@
     </div>
   </div>
 
-    <!--<ul class="nav nav-pills" style="margin-bottom: 1%;">
-      <li role="presentation" ><a href="./index.html">My favorites</a></li>
-      <li role="presentation" class="active"><a href="./food_finder.html">Food finder</a></li>
-      <li role="presentation"><a href="./business_submission.html">Business</a></li>
-    </ul>-->
-
-
-
-    <!--<div class="card" style="width: 90%; text-align: center; ">-->
-
     <div class="ui container">
-
-        <div class="ui card" style="align-content: center; margin: 0 auto;">
-            <div class="image">
-                <img class="img-responsive" id="foodPic">
-            </div>
-            <div class="content">
-
-                <a class="header" id="foodName"></a>
-                <div class="meta">
-                    <span class="date" id="restName"></span>
-                </div>
-                <div class="rating" id="stars">
-                        <label style="margin-right:1%">Rating:</label>
-
-                </div>
-                <div class="description" id="descrip">
-                    A delicious dish.
-                </div>
-            </div>
-            <div class="extra content">
-              
-                <div class="ui one column centered grid">
-                    <div class="center aligned column">
-                        <button onclick="dislike()" class="circular ui icon basic large red button">
-                            <i class="icon remove"></i>
-                        </button>
-                        <button onclick="like()" class="circular ui icon basic large green button">
-                            <i class="icon heart"></i>
-                        </button>
-                        <button onclick="superlike()" class="circular ui icon basic large blue button">
-                            <i class="icon star"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <h2>Help</h2>
+        <hr>
+        <p>Our app serves as a "Tinder" for food. We aim to help those who are hungry and want to eat out and do not know what they want to eat. With our app, we are hoping to help users spark cravings to decide what they may want to eat as well as promote local food businesses.</p>
+        <br>
+        <p>Lost and confused on how to interact with our app? Here, you can help get some clarifications and obtain a better understanding of our features and what they have to offer. Our team hopes that the following will be helpful to you!</p>
+        <br>
+        
+        <h3>My favorites?</h3>
+        <hr>
+        <p>On the "My favorites" page, you will see a map, recommendations, as well as a list of your favorited foods. On the map you will see two different types of pins: one with a star and with a thumbs up. The star pin represents your favorited foods and the thumbs up represents the foods that you currently liked for the day. If you click on the pins, a bubble should pop up and give you details on the food such as what restaurant it is from as well as a picture of the food that the pin came from.</p>
+        <br>
+        
+        <h3>Food Finder?</h3>
+        <hr>
+        <p>On the "Food Finder" page, you will come across a card. On this card you will see three buttons: a button with an "X", a button with a heart, and a button with a star. The "X" button represents a skip. If you do not crave the food shown on this card, you can skip by clicking the "X" button. The button with the hear represents a like. If the food you are currently looking at just so happens to spark an interest/craving, this is the button you want to click. If the food you are currently looking at is something you know is an all-time favorite and something you will always enjoy eating, you want to lick the heart button which represents a "favorite".</p>
+        <br>
+        <p>Your decisions on how you interact with the food cards will be shown on your favorites page map.</p>
+        <br>
+        
+        <h3>Business?</h3>
+        <hr>
+        <p>Are you a restuarant business owner who wants to add a dish to our Food Finder? The "Business" page is where you want to be! Here you will find a form to add a new dish. You are welcome to add a picture with it, add the address to your restaurant, add tags related to your dish, as well as other information such as a description. Once you submit, your dish will be added to our Food Finder!</p>
+        
+        
     </div>
 
    <script>
