@@ -11,38 +11,26 @@
 <script type="text/javascript" src="maps_interaction.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&libraries=places"></script>
 <link rel="stylesheet" type="text/css" href="styling.css">
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
 
 <script type="text/javascript" src="data_business.js"></script>
+<script type="text/javascript" src="authentication.js"></script>
 
 <script>
-  // var config = {
-  //   apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
-  //   //authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
-  //   databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
-  //   projectId: "foody-cogs121-1492804395262",
-  //   storageBucket: "foody-cogs121-1492804395262.appspot.com",
-  //   //messagingSenderId: "701518273477"
-  // };
-  // firebase.initializeApp(config);
+
 </script>
 
 <head>
-  <!--<ul class="nav nav-pills">
-      <li role="presentation"><a href="./index.html">My favorites</a></li>
-      <li role="presentation"><a href="./food_finder.html">Food Finder</a></li>
-      <li role="presentation"class="active"><a href="./business_submission.html">Business</a></li>
-
-    </ul>-->
+  
 </head>
 
 <body>
-
+    <script>
+        checkUser();
+    </script>
   <div class="ui secondary pointing menu">
     <a class="item" href="./map.html">
     My favorites
@@ -53,10 +41,8 @@
     <a class="active item" href="./business_submission.html">
     Business
   </a>
-    <div class="right menu">
-      <a class="ui item" href="./login.html">
-      Logout
-    </a>
+    <div class="right menu" id="login-corner">
+      <a class='ui item' href='./login.html'>Log in </a>
     </div>
   </div>
 

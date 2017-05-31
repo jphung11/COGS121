@@ -14,6 +14,7 @@
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-cloud.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
 <script type="text/javascript" src="maps_interaction.js"></script>
+<script type="text/javascript" src="authentication.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
@@ -22,9 +23,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1Z5S1c9XT0-rkej7fgofIWKE4CCmzn8Q&callback=initMap">
-    </script> -->
+
 
 <head>
   <title>Foodie</title>
@@ -37,12 +36,7 @@
   <script>
     checkUser();
   </script>
-  <!--<ul class="nav nav-pills">
-    <li role="presentation" class="active"><a href="#">My favorites</a></li>
-    <li role="presentation"><a href="./food_finder.html">Food Finder</a></li>
-    <li role="presentation"><a href="./business_submission.html">Business</a></li>
 
-  </ul>-->
 
   <style>
     #map {
@@ -64,26 +58,104 @@
     Business
   </a>
     <div class="right menu" id="login-corner">
-    
+      <a class='ui item' href='./login.html'>Log in </a>
     </div>
   </div>
-
-  <div class="ui container">
-    <div id="wrap">
-      <div id="left_col">
-          <div id="map">
+  <div class="ui stackable two column grid">
+    <div class="column" id="first_col">
+        <div id="map">
+            <script type="text/javascript">
+              initMap();
+              showAllPlaces();
+            </script>
+        </div>
+    </div>
+    <div class="column" id="second_col">
+      <h2>Recommendations:</h2>
+      <div class="ui list" id="recommend">
+        
+      </div>
+    </div>
+  </div>
+<!-- 
+   <div class="ui grid">
+  <div class="sixteen wide column"></div>
+  <div class="ten wide column">
+    <div id="map">
             <script type="text/javascript">
               initMap();
               showAllPlaces();
             </script>
           </div>
-      </div>  
-      <div id="right_col">
-          <h3 class="ui header">Recommendations</h3>
-      </div>
-    </div>
   </div>
-   
+  <div class="six wide column">
+    <h3 class="ui header">Recommendations</h3>
+    <table class="ui very basic collapsing celled table">
+  <thead>
+    <tr><th>Employee</th>
+    <th>Correct Guesses</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+          <div class="content">
+            Lena
+            <div class="sub header">Human Resources
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        22
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+          <div class="content">
+            Matthew
+            <div class="sub header">Fabric Design
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        15
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+          <div class="content">
+            Lindsay
+            <div class="sub header">Entertainment
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        12
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+          <div class="content">
+            Mark
+            <div class="sub header">Executive
+          </div>
+        </div>
+      </h4></td>
+      <td>
+        11
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div> -->
 
     <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 

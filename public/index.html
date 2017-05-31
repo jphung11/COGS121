@@ -18,6 +18,7 @@
 <script type="text/javascript" src="carousel.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="authentication.js"></script>
 <script type="text/javascript" src="index.js"></script>
 
 <!-- <script async defer
@@ -43,19 +44,14 @@
 
 <!--    <script type="text/javascript">$(document).ready(function(){ $('.ui.rating').rating(); console.log("did go in rating function");});</script>-->
 
-    <script>
-       initData();  
 
-    </script>
 
 </head>
 
 
 
 <body>
-    <script>
-        checkUser();
-    </script>
+   
     <div class="ui secondary pointing menu">
     <a class="item" href="./map.html">
     My favorites
@@ -67,7 +63,7 @@
     Business
   </a>
     <div class="right menu" id="login-corner">
-      
+      <a class='ui item' href='./login.html'>Log in </a>
     </div>
   </div>
 
@@ -88,62 +84,21 @@
                 <img class="img-responsive" id="foodPic">
             </div>
             <div class="content">
-<!--
-                <div class="rating" id="stars">
-                    <span class="right floated">
-                        <label>Rating:</label>
-                        <img src="../images/starfilled.png" width="40%">
-                        <img src="../images/starfilled.png" width="40%">
-                        <img src="../images/starfilled.png" width="40%">
-                    </span>
-                </div>
--->
-<!--
-                <span class="right floated">
-                    Rating:
-                    
-                    <div class="ui rating" data-rating="3" data-max-rating="5" id="rating"></div>
-                </span>
--->
+
                 <a class="header" id="foodName"></a>
                 <div class="meta">
                     <span class="date" id="restName"></span>
                 </div>
                 <div class="rating" id="stars">
                         <label style="margin-right:1%">Rating:</label>
-<!--
-                        <img class="img-responsive" src="../images/starfilled.png" width="3%">
-                        <img class="img-responsive" src="../images/starfilled.png" width="3%">
-                        <img class="img-responsive" src="../images/starfilled.png" width="3%">
--->
+
                 </div>
                 <div class="description" id="descrip">
                     A delicious dish.
                 </div>
             </div>
             <div class="extra content">
-                <!--<div class="ui four column grid">
-                    <div class="column">
-                        <button onclick="change()" class="circular ui icon basic toggle grey button">
-                        <i class="icon history"></i>
-                    </button>
-                    </div>
-                    <div class="column">
-                        <button onclick="change()" class="circular ui icon basic toggle red button">
-                        <i class="icon remove"></i>
-                    </button>
-                    </div>
-                    <div class="column">
-                        <button onclick="change()" class="right floated circular ui icon basic toggle green button">
-                        <i class="icon heart"></i>
-                    </button>
-                    </div>
-                    <div class="column">
-                        <button onclick="change()" class="right floated circular ui icon basic toggle blue button">
-                        <i class="icon star"></i>
-                    </button>
-                    </div>
-                </div>-->
+              
                 <div class="ui one column centered grid">
                     <div class="center aligned column">
                         <button onclick="dislike()" class="circular ui icon basic large red button">
@@ -162,7 +117,10 @@
 
     </div>
 
-   
+   <script>
+       initData();  
+       checkUser();
+    </script>
     <!-- bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
         crossorigin="anonymous"></script>
