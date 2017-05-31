@@ -208,9 +208,10 @@ function createMarkerForUser(){
       console.log(image)
       var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
         image + "</div>";
+      var link = "<form><input type=button value = 'Directions' onClick='self.location = 'https://www.google.com/maps?saddr=My+Location&daddr=" + childData[restaurant] + "''></form>"
       // info.setContent(str);
       marker.info = new google.maps.InfoWindow({
-        content: str
+        content: str + link
       });
       google.maps.event.addListener(marker, 'click', function () {
         marker.info.open(map, marker);
