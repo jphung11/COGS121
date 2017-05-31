@@ -101,7 +101,7 @@ function change() {
                                 for (k = 0; k < 4; k++) {
                                     var spanfilled = document.createElement("span");
                                     var elem1 = document.createElement("img");
-                                    elem1.src = "./images/starfilled.png";
+                                    elem1.src = "images/starfilled.png";
                                     elem1.setAttribute("class", "img-responsive");
                                     spanfilled.appendChild(elem1);
                                                 
