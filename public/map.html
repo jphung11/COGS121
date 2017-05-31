@@ -29,8 +29,11 @@
   <title>Foodie</title>
 
   <script type="text/javascript">
+    $(".menu .item")
+      .tab()
+    ;
     $(document).ready(function () {
-      $('.menu .item').tab();
+      $(".menu .item").tab();
     });
   </script>
   <script>
@@ -64,6 +67,16 @@
       <a class='ui item' href='./login.html'>Log in </a>
     </div>
   </div>
+
+<script type="text/javascript">
+    $('.menu .item')
+      .tab()
+    ;
+    $(document).ready(function () {
+      $('.menu .item').tab();
+    });
+  </script>
+
   <div class="ui stackable two column grid">
     <div class="column" id="first_col">
         <div id="map">
@@ -190,16 +203,19 @@
     <div class="ui segment">
 
       <!--<div class="ui top attached tabular menu">
-        <a class="item active" data-tab="first">My Favorites</a>
-        <a class="item" data-tab="second">My Likes</a>
+        <a class="item active" data-tab="first">First</a>
+        <a class="item" data-tab="second">Second</a>
+        <a class="item" data-tab="third">Third</a>
       </div>
-
       <div class="ui bottom attached tab segment active" data-tab="first">
-        first
+        First
       </div>
       <div class="ui bottom attached tab segment" data-tab="second">
-        second
-      </div>  -->
+        Second
+      </div>
+      <div class="ui bottom attached tab segment" data-tab="third">
+        Third
+      </div>-->
 
       <h3 class="ui header">My Favorites:</h3>
         
