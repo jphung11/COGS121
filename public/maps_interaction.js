@@ -3,15 +3,39 @@ var service;
 var infowindow;
 var markersArray = [];
 var geoMarker = [];
+var listOfRestaurant = [];
 var config = {
   apiKey: "AIzaSyAfCoC-kndsmuPJQs-OMjEFaIrQqWNeptg",
+  authDomain: "foody-cogs121-1492804395262.firebaseapp.com",
   databaseURL: "https://foody-cogs121-1492804395262.firebaseio.com",
   projectId: "foody-cogs121-1492804395262",
   storageBucket: "foody-cogs121-1492804395262.appspot.com",
 };
 firebase.initializeApp(config);
+var database = firebase.database();
 var im = 'http://www.robotwoods.com/dev/misc/bluecircle.png';
+function checkUser(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      console.log(user);
+      console.log(user.email);
+      name = user.displayName;
+      var imgURL;
+      user.providerData.forEach(function (profile){
+        console.log(profile.photoURL)
+        imgURL = profile.photoURL;
+      });
+      console.log(name)
 
+      document.getElementById('login-corner').innerHTML = "<a class='ui item'> Hi, "+name + "!   <img width=20 height=25 src=" +imgURL + "></a>"
+    } else {
+      // No user is signed in.
+      document.getElementById('login-corner').innerHTML = "<a class='ui item' href='./login.html'>Log in </a>"
+    }
+  });
+  // var user = firebase.auth().currentUser;  
+}
 $(document).ready(function () {
   $('.menu .item')
     .tab();
@@ -157,71 +181,180 @@ function pickPlace(param) {
   service.textSearch(request, callback);
 
 }
+function createMarkerForUser(typeOfInteraction){
+  console.log(listOfRestaurant);
+  var icon_image;
+  if (typeOfInteraction == "like"){
+    icon_image = "https://cdn1.iconfinder.com/data/icons/navigation-ui/154/love-heart-24.png"
+  }
+  else{
+    icon_image = "https://cdn2.iconfinder.com/data/icons/default-1/100/.svg-4-24.png"
+  }
+ for (var i = 0; i < listOfRestaurant.length; i++) {
+  var info = new google.maps.InfoWindow()
+  var dishRef = firebase.database().ref('dishes/'+listOfRestaurant[i])
 
+  dishRef.once('value', function (snapshot) {
+    var childData = snapshot.val();
+    var marker = new google.maps.Marker({
+    map: map,
+    title: childData["restaurant"],
+    animation: google.maps.Animation.DROP,
+    position: new google.maps.LatLng(childData["latitude"], childData["longitude"]),
+    icon: icon_image
+  });
+  console.log(childData["place_id"])
+  imageRef = firebase.storage().ref(childData["img_name"])
+
+  // Get the download URL
+  imageRef.getDownloadURL().then(function (url) {
+    image = "<img src=".concat(url).concat(" style='width:150px;height:150px;'></img>");
+    console.log(image)
+    var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
+      image + "</div>";
+    // info.setContent(str);
+    marker.info = new google.maps.InfoWindow({
+      content: str
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+      marker.info.open(map, marker);
+
+    })
+    // marker.addListener('click', function() {
+    //     infowindow.open(map, marker);
+    //   });
+
+
+  }).catch(function (error) {
+
+    // A full list of error codes is available at
+    // https://firebase.google.com/docs/storage/web/handle-errors
+    switch (error.code) {
+      case 'storage/object_not_found':
+        // File doesn't exist
+        break;
+
+      case 'storage/unauthorized':
+        // User doesn't have permission to access the object
+        break;
+
+      case 'storage/canceled':
+        // User canceled the upload
+        break;
+
+      case 'storage/unknown':
+        // Unknown error occurred, inspect the server response
+        break;
+    }
+  });
+
+  markersArray.push(marker);
+});
+}
+}
+function loadUserInfo(user_id,typeOfInteraction)
+{   
+    console.log("start creating marker for" + typeOfInteraction +"of user: " + user_id);
+    var userRef = database.ref('users/'+user_id+'/'+typeOfInteraction);
+    listOfRestaurant = [];
+
+    userRef.once('value', function (snapshot) {
+      snapshot.forEach(function (childSnapshot) {
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+        console.log(childKey)
+        console.log(childData)
+        listOfRestaurant.push(childData["id"])
+        });
+    });
+    setTimeout(function() { createMarkerForUser(typeOfInteraction); }, 5000);
+
+    
+}
+function showUserPlaces(){
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    var user_id = user.uid;
+    console.log(user_id);
+    loadUserInfo(user_id,"like");
+    setTimeout(function() { loadUserInfo(user_id,"superlike"); }, 5000);
+
+    
+  } else {
+    alert("Please login first")
+  }
+  });
+    
+}
+function showRecommendedPlaces(){
+
+}
 function showAllPlaces() {
   clearOverlays();
-  var info = new google.maps.InfoWindow()
-  var dishRef = firebase.database().ref('dishes')
-  dishRef.once('value', function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
-      var childKey = childSnapshot.key;
-      var childData = childSnapshot.val();
-      // for (var i in childData){
-      var marker = new google.maps.Marker({
-        map: map,
-        title: childData["restaurant"],
-        animation: google.maps.Animation.DROP,
-        position: new google.maps.LatLng(childData["latitude"], childData["longitude"])
-      });
-      console.log(childData["place_id"])
-      imageRef = firebase.storage().ref(childData["img_name"])
+  showUserPlaces();
+  showRecommendedPlaces();
+  // var info = new google.maps.InfoWindow()
+  // var dishRef = firebase.database().ref('dishes')
+  // dishRef.once('value', function (snapshot) {
+  //   snapshot.forEach(function (childSnapshot) {
+  //     var childKey = childSnapshot.key;
+  //     var childData = childSnapshot.val();
+  //     // for (var i in childData){
+  //     var marker = new google.maps.Marker({
+  //       map: map,
+  //       title: childData["restaurant"],
+  //       animation: google.maps.Animation.DROP,
+  //       position: new google.maps.LatLng(childData["latitude"], childData["longitude"])
+  //     });
+  //     console.log(childData["place_id"])
+  //     imageRef = firebase.storage().ref(childData["img_name"])
 
-      // Get the download URL
-      imageRef.getDownloadURL().then(function (url) {
-        image = "<img src=".concat(url).concat(" style='width:150px;height:150px;'></img>");
-        console.log(image)
-        var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
-          image + "</div>";
-        // info.setContent(str);
-        marker.info = new google.maps.InfoWindow({
-          content: str
-        });
-        google.maps.event.addListener(marker, 'click', function () {
-          marker.info.open(map, marker);
+  //     // Get the download URL
+  //     imageRef.getDownloadURL().then(function (url) {
+  //       image = "<img src=".concat(url).concat(" style='width:150px;height:150px;'></img>");
+  //       console.log(image)
+  //       var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
+  //         image + "</div>";
+  //       // info.setContent(str);
+  //       marker.info = new google.maps.InfoWindow({
+  //         content: str
+  //       });
+  //       google.maps.event.addListener(marker, 'click', function () {
+  //         marker.info.open(map, marker);
 
-        })
-        // marker.addListener('click', function() {
-        //     infowindow.open(map, marker);
-        //   });
+  //       })
+  //       // marker.addListener('click', function() {
+  //       //     infowindow.open(map, marker);
+  //       //   });
 
 
-      }).catch(function (error) {
+  //     }).catch(function (error) {
 
-        // A full list of error codes is available at
-        // https://firebase.google.com/docs/storage/web/handle-errors
-        switch (error.code) {
-          case 'storage/object_not_found':
-            // File doesn't exist
-            break;
+  //       // A full list of error codes is available at
+  //       // https://firebase.google.com/docs/storage/web/handle-errors
+  //       switch (error.code) {
+  //         case 'storage/object_not_found':
+  //           // File doesn't exist
+  //           break;
 
-          case 'storage/unauthorized':
-            // User doesn't have permission to access the object
-            break;
+  //         case 'storage/unauthorized':
+  //           // User doesn't have permission to access the object
+  //           break;
 
-          case 'storage/canceled':
-            // User canceled the upload
-            break;
+  //         case 'storage/canceled':
+  //           // User canceled the upload
+  //           break;
 
-          case 'storage/unknown':
-            // Unknown error occurred, inspect the server response
-            break;
-        }
-      });
+  //         case 'storage/unknown':
+  //           // Unknown error occurred, inspect the server response
+  //           break;
+  //       }
+  //     });
 
-      markersArray.push(marker);
-    });
-    console.log("haha")
-  })
+  //     markersArray.push(marker);
+  //   });
+  //   console.log("haha")
+  // })
 }
 
 function clearOverlays() {
