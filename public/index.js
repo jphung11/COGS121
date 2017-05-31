@@ -65,7 +65,7 @@ function change() {
                     var CurrRestaurants = snapshot.val();
                     console.log(children.length);
                     if (MenuCnt == children.length) {
-                        document.getElementById("foodPic").src = "../images/nomore.png"
+                        document.getElementById("foodPic").src = "./images/nomore.png"
                         document.getElementById("foodPic").alt = "No more";
                         document.getElementById("foodName").innerHTML = "Currently no more dishes! :(";
                         document.getElementById("restName").innerHTML = "";
@@ -101,7 +101,7 @@ function change() {
                                 for (k = 0; k < 4; k++) {
                                     var spanfilled = document.createElement("span");
                                     var elem1 = document.createElement("img");
-                                    elem1.src = "../images/starfilled.png";
+                                    elem1.src = "./images/starfilled.png";
                                     elem1.setAttribute("class", "img-responsive");
                                     spanfilled.appendChild(elem1);
                                                 
