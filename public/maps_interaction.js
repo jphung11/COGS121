@@ -204,16 +204,42 @@ function createMarkerForUser(){
     
     // Get the download URL
     imageRef.getDownloadURL().then(function (url) {
-      image = "<img src=".concat(url).concat(" style='width:150px;height:150px;'></img>");
+      var image = "<img src=".concat(url).concat(" style='width:150px;height:150px;'></img>");
       console.log(image)
       var str = "<div><strong>" + childData["food-name"] + "</strong><br>" + childData["restaurant"] + "<br>" +
         image + "<br><a href='https://www.google.com/maps?saddr=My+Location&daddr=" + childData["restaurant"] + "'>Directions</a>" + "</div>";
+        image + "</div>";
+      // var link = "<form><input type=button value = 'Directions' onClick='self.location = 'https://www.google.com/maps?saddr=My+Location&daddr=" + childData[restaurant] + "''></form>"
+       // image + "<a href='https://www.google.com/maps?saddr=My+Location&daddr=" + childData["restaurant"] + "'>Directions</a>" + "</div>";
 
       // info.setContent(str);
+      var bigImage =  "<img src=".concat(url).concat("></img>");
+      console.log(bigImage);
+      console.log("<div class='ui fuild card fave'>" +
+                          "<div class='image'>" + bigImage  + "</div>"+
+                          "<div class='content'>"+
+                            "<a class='header'>" + childData["food-name"] +" </a>"+
+                            // "<div class='description'>"+ childData["restaurant"]+ "</div>"+
+                          "</div>"+
+                        "</div>");
+      $("#myFavorites").append("<div class='ui fuild card fave'>" +
+                          "<div class='image'>" + bigImage  + "</div>"+
+                          "<div class='content'>"+
+                            "<a class='header'>" + childData["food-name"] +" </a>"+
+                            "<div class='description'>"+ childData["restaurant"]+ "    "+ 
+                              "<a class='ui green tag label'> $"+ childData["price"] + "</a>" +
+                            "</div>"+
+                          "</div>"+
+                        "</div>");
       marker.info = new google.maps.InfoWindow({
+        content: str 
+        // + link
+      
+      });
+      google.maps.event.addListener(marker, 'click', function () {
         content: str
-      })
-;      google.maps.event.addListener(marker, 'click', function () {
+      });     
+      google.maps.event.addListener(marker, 'click', function () {
         marker.info.open(map, marker);
 
       })
@@ -307,7 +333,6 @@ function showRecommendedPlaces(){
     
                       // Get the download URL
                       imageRef.getDownloadURL().then(function (url) {
-                        console.log("gohere");
                         image = "<img class='ui avatar image' src=".concat(url).concat(" style='width:50px;height:50px;'></img>");
                         $("#recommend").append("<div class='item'>" + image  +
                           "<div class='content'>"+

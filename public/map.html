@@ -29,8 +29,11 @@
   <title>Foodie</title>
 
   <script type="text/javascript">
+    $(".menu .item")
+      .tab()
+    ;
     $(document).ready(function () {
-      $('.menu .item').tab();
+      $(".menu .item").tab();
     });
   </script>
   <script>
@@ -64,6 +67,16 @@
       <a class='ui item' href='./login.html'>Log in </a>
     </div>
   </div>
+
+<script type="text/javascript">
+    $('.menu .item')
+      .tab()
+    ;
+    $(document).ready(function () {
+      $('.menu .item').tab();
+    });
+  </script>
+
   <div class="ui stackable two column grid">
     <div class="column" id="first_col">
         <div id="map">
@@ -74,137 +87,38 @@
         </div>
     </div>
     <div class="column" id="second_col">
-      <h2>Recommendations:</h2>
+      <h2>Recommendations:
+        <img class='ui avatar image' src="https://cdn1.iconfinder.com/data/icons/basic-ui-elements-color/700/08_thumbs_up-24.png" style='width:50px;height:50px;'></img>
+      </h2>
+      
       <div class="ui list" id="recommend">
         
       </div>
     </div>
   </div>
-<!-- 
-   <div class="ui grid">
-  <div class="sixteen wide column"></div>
-  <div class="ten wide column">
-    <div id="map">
-            <script type="text/javascript">
-              initMap();
-              showAllPlaces();
-            </script>
-          </div>
-  </div>
-  <div class="six wide column">
-    <h3 class="ui header">Recommendations</h3>
-    <table class="ui very basic collapsing celled table">
-  <thead>
-    <tr><th>Employee</th>
-    <th>Correct Guesses</th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
-          <div class="content">
-            Lena
-            <div class="sub header">Human Resources
-          </div>
-        </div>
-      </h4></td>
-      <td>
-        22
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
-          <div class="content">
-            Matthew
-            <div class="sub header">Fabric Design
-          </div>
-        </div>
-      </h4></td>
-      <td>
-        15
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
-          <div class="content">
-            Lindsay
-            <div class="sub header">Entertainment
-          </div>
-        </div>
-      </h4></td>
-      <td>
-        12
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h4 class="ui image header">
-          <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
-          <div class="content">
-            Mark
-            <div class="sub header">Executive
-          </div>
-        </div>
-      </h4></td>
-      <td>
-        11
-      </td>
-    </tr>
-  </tbody>
-</table>
-  </div>
-</div> -->
 
-    <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
-      <div class="carousel-inner" id="two">
-
-        <div class="item active">
-
-          <p class="desc">Welcome to Foody</p>
-          <p class="desc">Navigate through your recommended dishes.</p>
-
-        </div>
-        <script type="text/javascript">
-          addFood();
-        </script>
-      </div>
-
-
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left icon-prev"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right icon-next"></span>
-        <span class="sr-only">Next</span>
-      </a>
-
-    </div>-->
 
     <div class="ui segment">
 
       <!--<div class="ui top attached tabular menu">
-        <a class="item active" data-tab="first">My Favorites</a>
-        <a class="item" data-tab="second">My Likes</a>
+        <a class="item active" data-tab="first">First</a>
+        <a class="item" data-tab="second">Second</a>
+        <a class="item" data-tab="third">Third</a>
       </div>
-
       <div class="ui bottom attached tab segment active" data-tab="first">
-        first
+        First
       </div>
       <div class="ui bottom attached tab segment" data-tab="second">
-        second
-      </div>  -->
+        Second
+      </div>
+      <div class="ui bottom attached tab segment" data-tab="third">
+        Third
+      </div>-->
 
       <h3 class="ui header">My Favorites:</h3>
         
-    <div class="ui five stackable cards">
-        <div class="ui fluid card fave">
+    <div class="ui five stackable cards" id="myFavorites">
+        <!-- <div class="ui fluid card fave">
             <div class="image">
               <img src="hamburger.jpg">
             </div>
@@ -256,7 +170,7 @@
             <div class="content">
               <a class="header">Orange Chicken</a>
             </div>
-          </div>
+          </div> -->
     </div>
 
 <!--
